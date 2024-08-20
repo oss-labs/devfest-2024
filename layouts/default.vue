@@ -40,16 +40,23 @@
 
     <v-container
       fluid
-      class="pa-0"
+      class="pa-0 mt-8"
       style="max-width: 1400px; margin-left: auto; margin-right: auto"
     >
+      <v-divider class="mb-4"></v-divider>
       <v-row>
-        <v-col>
+        <v-col md="2">
           <h3>GDG XYZ</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed
-            doloremque quo, placeat ex maxime impedit. Enim at
-          </p>
+          <p><i>developed by OSS Labs</i></p>
+        </v-col>
+        <v-col md="10">
+          <v-container fluid class="pa-0">
+            <v-row>
+              <v-col md="3" v-for="i in 4" :key="i">
+                <NuxtLink style="display: block;" v-for="i in 4" :key="i">Link 1</NuxtLink>
+              </v-col>
+            </v-row>
+          </v-container>
         </v-col>
       </v-row>
     </v-container>

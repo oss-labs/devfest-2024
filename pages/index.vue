@@ -9,14 +9,16 @@
         <v-col class="text-center" cols="12">
           <v-chip class="mx-1" size="large">
             <v-icon icon="mdi-calendar-month-outline" start></v-icon>
-            Oct 23, 2024</v-chip
+            {{ configData.eventInfo.date }}</v-chip
           >
           <v-chip class="mx-1" size="large">
             <v-icon icon="mdi-map-marker-check-outline" start></v-icon>
-            Somewhere in the Earth</v-chip
+            {{ configData.eventInfo.venue.address }}</v-chip
           >
 
-          <h1 class="my-4" style="font-size: 450%; line-height: 65px">
+          <h1 class="my-4" style="line-height: 65px"
+          :style="{ fontSize: screenWidth > 450 ? '450%' : '180%' }"
+          >
             The city's most beloved tech <br />
             conference
           </h1>
@@ -30,7 +32,14 @@
             rounded
             size="large"
             color="#4182F1"
+            v-if="
+              configData &&
+              configData.eventInfo.registeration.link.length &&
+              new Date(configData.eventInfo.registeration.end_date) > new Date()
+            "
+            :href="configData.eventInfo.registeration.link"
             class="my-4"
+            target="_blank"
             style="border: 1.5px solid #1e1e1e; color: black"
             variant="flat"
             >Register Now</v-btn
@@ -38,13 +47,13 @@
 
           <v-container>
             <v-row justify="center">
-              <v-col md="2" v-for="i in 4" :key="i">
+              <v-col md="2" v-for="(item, index) in stats" :key="index">
                 <div
                   style="background-color: #eeeeee; border-radius: 20px"
                   class="pa-2"
                 >
-                  <h1>1200+</h1>
-                  <p>Participants</p>
+                  <h1>{{ item.value }}</h1>
+                  <p>{{ item.name }}</p>
                 </div>
               </v-col>
             </v-row>
@@ -55,7 +64,7 @@
 
       <!-- Whats New -->
       <v-row>
-        <HomeMoveSection />
+        <!-- <HomeMoveSection /> -->
         <HomeExpectionSection />
       </v-row>
       <!-- Whats New -->
@@ -122,8 +131,51 @@
 </template>
 
 <script setup>
+import { useDisplay } from "vuetify";
+import configData from "/public/data/config.json";
+
+const { width, mobile } = useDisplay();
+const screenWidth = ref(0);
+let whatToExpect = ref([]);
+let stats = ref([]);
+
+const configDataSet = ref([]);
+configDataSet.value = configData;
+screenWidth.value = width;
+
+stats.value = configDataSet.value.eventInfo.stats;
+whatToExpect.value = configDataSet.value.eventInfo.whatToExpect;
+
 definePageMeta({
   layout: false,
+});
+
+useSeoMeta({
+  contentType: "text/html; charset=utf-8",
+  title:
+    configDataSet.value.eventInfo.name +
+    " | " +
+    configDataSet.value.communityName,
+  description: configDataSet.value.eventInfo.description.short,
+  keywords: configDataSet.value.seo.keywords,
+  author: "OSS Labs",
+  creator: "OSS Labs",
+  viewport: "width=device-width, initial-scale=1.0",
+  ogTitle:
+    configDataSet.value.eventInfo.name +
+    " | " +
+    configDataSet.value.communityName,
+  ogDescription: configDataSet.value.eventInfo.description.short,
+  ogImage: `${configDataSet.value.seo.hostUrl}/thumbnail.png?auto=format&fit=crop&frame=1&h=512&w=1024`,
+  ogUrl: configDataSet.value.seo.hostUrl,
+  ogType: "website",
+  twitterTitle:
+    configDataSet.value.eventInfo.name +
+    " | " +
+    configDataSet.value.communityName,
+  twitterDescription: configDataSet.value.eventInfo.description.short,
+  twitterImage: `${configDataSet.value.seo.hostUrl}thumbnail.png?auto=format&fit=crop&frame=1&h=512&w=1024`,
+  twitterCard: "summary_large_image",
 });
 </script>
 

@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="default">
-    <v-container fluid>
+    <v-container fluid class="mt-5">
       <!-- Mobile -->
       <v-row>
         <v-col md="12" lg="12" class="d-block d-sm-block d-md-none px-0">
@@ -15,10 +15,10 @@
       <!-- Mobile -->
 
       <!-- Desktop -->
-      <v-row class="mb-md-10" justify="center" align="center">
+      <v-row class="mb-md-15" justify="center" align="center">
         <v-col md="7" class="order-md-1 order-sm-2 order-2 mt-3 px-0 mb-md-13">
           <div class="d-none d-sm-none d-md-block mb-10">
-            <p class="text-h3 mb-4">Badges</p>
+            <h1 class="mb-4">Badges</h1>
 
             <p class="google-font">
               Upload an image and generate a personalised badge with the Google

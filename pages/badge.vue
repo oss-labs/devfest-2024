@@ -33,10 +33,12 @@
             <br />
 
             <v-btn
-              class="action_btn mt-4 mb-5"
+              class="mt-4 mb-5"
               size="large"
+              color="#4182F1"
               @click="uploadImage()"
               rounded
+              variant="flat"
               style="text-transform: capitalize"
             >
               Upload Image
@@ -97,7 +99,7 @@
         >
           <canvas style="border-radius: 12px" class=""></canvas>
           <v-btn
-            class="pb-0 mb-0 action_download_btn mt-2"
+            class="pb-0 mb-0 mt-2"
             rounded
             id="download"
             @click="download()"
@@ -108,7 +110,6 @@
       </v-row>
       <!-- Desktop -->
     </v-container>
-
   </NuxtLayout>
 </template>
 <script>
@@ -305,18 +306,6 @@ export default {
 canvas {
   width: 1500px;
   max-width: 80%;
-}
-.action_btn {
-  background: linear-gradient(90deg, #ffcb32, #34a853 80%);
-  color: #000;
-  box-shadow: none;
-  border: 0px solid black;
-}
-.action_download_btn {
-  background: linear-gradient(90deg, #faab31, #fcc731, #faab31 80%);
-  color: #000;
-  box-shadow: none;
-  border: 1px solid black;
 }
 
 @media screen and (max-width: 860px) {

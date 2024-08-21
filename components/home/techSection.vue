@@ -24,6 +24,7 @@
                   <v-avatar
                     color="white"
                     size="60"
+                    class="pa-3"
                     style="border: 1px solid black"
                   >
                     <v-img :src="item.logo"></v-img>
@@ -45,69 +46,64 @@
 <script setup>
 var tech = ref([
   {
-    name: "Accessibility",
-    link: "https://www.google.com/accessibility/",
-    logo: "https://io.google/2022/app/images/accessibility-logo.svg",
-  },
-  {
     name: "Android",
     link: "https://developer.android.com/",
-    logo: "https://io.google/2022/app/images/android-logo.svg",
+    logo: "https://developer.android.com/static/images/android-logo.svg",
+  },
+  {
+    name: "Google Checks",
+    link: "https://checks.google.com/",
+    logo: "https://developers.google.com/static/checks/images/Checks_Icon_2880.png",
   },
   {
     name: "ARCore",
     link: "https://developers.google.com/ar",
-    logo: "https://io.google/2022/app/images/arcore-logo.svg",
+    logo: "https://developers.google.com/static/ar/images/logo.svg",
   },
   {
-    name: "Chrome OS",
-    link: "https://chromeos.dev/en",
-    logo: "https://io.google/2022/app/images/chrome-logo.svg",
+    name: "Google Chrome",
+    link: "https://www.google.com/chrome/",
+    logo: "https://www.gstatic.com/devrel-devsite/prod/ve6d23e3d09b80ebb8aa912b18630ed278e1629b97aee6522ea53593a0024d951/chrome/images/touchicon-180.png",
+  },
+  {
+    name: "Google AI Studio",
+    link: "https://aistudio.google.com/",
+    logo: "https://developers.google.com/static/focus/images/ai-studio-icon_2880.png",
   },
   {
     name: "Firebase",
     link: "https://firebase.google.com/",
-    logo: "https://io.google/2022/app/images/firebase-logo.svg",
+    logo: "https://firebase.google.com/_static/firebase/images/icon.svg",
   },
   {
     name: "Flutter",
     link: "https://flutter.dev/",
-    logo: "https://io.google/2022/app/images/flutter-logo.svg",
+    logo: "https://developers.google.com/static/site-assets/logo-flutter.svg",
   },
   {
     name: "Google Cloud",
     link: "https://cloud.google.com/",
-    logo: "https://io.google/2022/app/images/googlecloud-logo.svg",
+    logo: "https://www.gstatic.com/devrel-devsite/prod/ve6d23e3d09b80ebb8aa912b18630ed278e1629b97aee6522ea53593a0024d951/cloud/images/favicons/onecloud/super_cloud.png",
   },
   {
     name: "Google Maps",
     link: "https://developers.google.com/maps",
-    logo: "https://io.google/2022/app/images/googlemaps-logo.svg",
+    logo: "https://developers.google.com/static/maps/images/maps-icon.svg",
   },
   {
     name: "Google Pay & Google Wallet",
     link: "https://developers.google.com/wallet",
-    logo: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0wIDYwQzAgMjYuODYyOSAyNi44NjI5IDAgNjAgMFYwQzkzLjEzNzEgMCAxMjAgMjYuODYyOSAxMjAgNjBWNjBDMTIwIDkzLjEzNzEgOTMuMTM3MSAxMjAgNjAgMTIwVjEyMEMyNi44NjI5IDEyMCAwIDkzLjEzNzEgMCA2MFY2MFoiIGZpbGw9IiNGMUYzRjQiLz4KPHBhdGggZD0iTTg4IDUzLjczMzNIMzJWNDQuODY2N0MzMiAzOS45NzEzIDM2LjA0NiAzNiA0MS4wMyAzNkg3OC45NjUzQzgzLjk1ODcgMzYgODggMzkuOTcxMyA4OCA0NC44NjY3VjUzLjczMzNaIiBmaWxsPSIjMzRBODUzIi8+CjxwYXRoIGQ9Ik04OCA2MS4yMDAxSDMyVjUyLjMzMzVDMzIgNDcuNDM4MSAzNi4wNDYgNDMuNDY2OCA0MS4wMyA0My40NjY4SDc4Ljk2NTNDODMuOTU4NyA0My40NjY4IDg4IDQ3LjQzODEgODggNTIuMzMzNVY2MS4yMDAxWiIgZmlsbD0iI0ZCQkMwNCIvPgo8cGF0aCBkPSJNODggNjguNjY2N0gzMlY1OS44QzMyIDU0LjkwNDcgMzYuMDQ2IDUwLjkzMzMgNDEuMDMgNTAuOTMzM0g3OC45NjUzQzgzLjk1ODcgNTAuOTMzMyA4OCA1NC45MDQ3IDg4IDU5LjhWNjguNjY2N1oiIGZpbGw9IiNFQTQzMzUiLz4KPHBhdGggZD0iTTMyIDU1Ljk2ODhMNjcuNTU1MyA2NC4yMDU0QzcxLjc2OTMgNjUuMTgwOCA3Ni4yMTIgNjQuMjc1NCA3OS42NjA3IDYxLjczNjhMODggNTUuNjAwMVY3NC44NTAxQzg4IDc5LjY4MDEgODMuOTU0IDgzLjYwMDEgNzguOTcgODMuNjAwMUg0MS4wMzQ3QzM2LjA0NiA4My42MDAxIDMyIDc5LjY4MDEgMzIgNzQuODUwMVY1NS45Njg4WiIgZmlsbD0iIzQyODVGNCIvPgo8L3N2Zz4K",
+    logo: "https://developers.google.com/static/wallet/images/wallet-icon.png",
   },
   {
     name: "Google Play",
     link: "https://play.google.com/console/about/",
-    logo: "https://io.google/2022/app/images/googleplay-logo.svg",
-  },
-  {
-    name: "Material Design",
-    link: "https://material.io/design",
-    logo: "https://io.google/2022/app/images/materialdesign-logo.svg",
+    logo: "https://fonts.gstatic.com/s/i/productlogos/play_games/v4/web-64dp/logo_play_games_color_1x_web_64dp.png",
   },
   {
     name: "TensorFlow",
     link: "https://www.tensorflow.org/",
-    logo: "https://io.google/2022/app/images/machinelearning-logo.svg",
-  },
-  {
-    name: "Web",
-    link: "https://developers.google.com/web",
-    logo: "https://io.google/2022/app/images/web-logo.svg",
+    logo: "https://www.gstatic.com/devrel-devsite/prod/v20ab951cf37b43fc7a428ae75ce91d8269f391204ca16525bc8a5ececea0ab56/tensorflow/images/apple-touch-icon-180x180.png",
   },
 ]);
 </script>

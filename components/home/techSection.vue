@@ -37,7 +37,7 @@
       </v-col>
 
       <v-col md="4" cols="12">
-        <v-img src="/public/img/side.png" rounded="xl"></v-img>
+        <v-img src="/public/img/common/side.png" rounded="xl"></v-img>
       </v-col>
     </v-row>
   </v-container>

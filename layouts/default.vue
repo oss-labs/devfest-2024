@@ -19,7 +19,7 @@
       <v-row justify="center" align="center">
         <v-col md="2" cols="12">
           <h3>{{ configDataSet.communityName }}</h3>
-          <p><i>developed by OSS Labs</i></p>
+          <a href="https://github.com/oss-labs/" style="text-decoration: none;color:black"><p style="font-size: 70%;"><i>developed by OSS Labs</i></p></a>
         </v-col>
         <v-col md="10" cols="12">
           <v-container fluid class="pa-0">

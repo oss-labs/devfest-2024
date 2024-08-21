@@ -4,7 +4,7 @@
       <!-- Hero -->
       <v-row v-if="configData">
         <v-col md="12">
-          <v-img src="/img/home.png" rounded="xl"></v-img>
+          <v-img src="/img/common/home.png" rounded="xl"></v-img>
         </v-col>
         <v-col class="text-center" cols="12">
           <v-chip class="mx-1" size="large">

@@ -40,6 +40,10 @@
 
 <script setup>
 import scheduleJSON from "/public/data/schedule.json";
+import configData from "/public/data/config.json";
+
+const configDataSet = ref([]);
+configDataSet.value = configData;
 
 let scheduleData = ref([]);
 let model = ref(null)
@@ -48,6 +52,37 @@ scheduleData.value = scheduleJSON
 
 definePageMeta({
   layout: false,
+});
+
+useSeoMeta({
+  contentType: "text/html; charset=utf-8",
+  title:
+    "Agenda - " +
+    configDataSet.value.eventInfo.name +
+    " | " +
+    configDataSet.value.communityName,
+  description: configDataSet.value.eventInfo.description.short,
+  keywords: configDataSet.value.seo.keywords,
+  author: "OSS Labs",
+  creator: "OSS Labs",
+  viewport: "width=device-width, initial-scale=1.0",
+  ogTitle:
+    "Agenda - " +
+    configDataSet.value.eventInfo.name +
+    " | " +
+    configDataSet.value.communityName,
+  ogDescription: configDataSet.value.eventInfo.description.short,
+  ogImage: `${configDataSet.value.seo.hostUrl}/thumbnail.png?auto=format&fit=crop&frame=1&h=512&w=1024`,
+  ogUrl: configDataSet.value.seo.hostUrl,
+  ogType: "website",
+  twitterTitle:
+    "Agenda - " +
+    configDataSet.value.eventInfo.name +
+    " | " +
+    configDataSet.value.communityName,
+  twitterDescription: configDataSet.value.eventInfo.description.short,
+  twitterImage: `${configDataSet.value.seo.hostUrl}thumbnail.png?auto=format&fit=crop&frame=1&h=512&w=1024`,
+  twitterCard: "summary_large_image",
 });
 
 </script>

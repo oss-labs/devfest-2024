@@ -11,27 +11,27 @@
         variant="tonal"
       ></v-btn>
     </template>
-    <v-card rounded="xl">
+    <v-card rounded="xl" class="pa-4">
       <v-container fluid>
         <v-row>
           <v-col>
-            <h4>Delete Project</h4>
+            <h4>Delete Team</h4>
           </v-col>
         </v-row>
-        <v-row class="my-5">
+        <v-row class="mt-5">
           <v-col md="12" cols="12" class="my-n2">
             <p>Are you sure?</p>
-            <p>Deleted Project Can't be Recover!!</p>
-            {{ props.docid }}
+            <p>Deleted Team Can't be Recover!!</p>
           </v-col>
-          <v-col md="12" cols="12" class="my-n2">
+          <v-col md="12" cols="12" class="mt-4">
             <v-btn
               :loading="loading"
-              @click="deleteProjectData"
+              @click="deleteTeamData"
               variant="flat"
               color="primary"
               >Delete</v-btn
             >
+            <v-btn variant="flat" class="mx-2" @click="dialog=false">Close</v-btn>
           </v-col>
         </v-row>
       </v-container>
@@ -41,7 +41,7 @@
   
   <script setup>
 import { defineEmits } from "vue";
-const { deleteProject } = useProjects();
+const { deleteTeam } = useTeam();
 
 let dialog = ref(false);
 let loading = ref(false);
@@ -56,11 +56,11 @@ const props = defineProps({
 // Define the emit function
 const emit = defineEmits(["showUpdate"]);
 
-const deleteProjectData = async () => {
+const deleteTeamData = async () => {
   try {
     loading.value = true;
-    console.log("deleting projects whose doc id is::::", props.docid);
-    let res = await deleteProject("projects", props.docid);
+    console.log("deleting tEAM whose doc id is::::", props.docid);
+    let res = await deleteTeam("team", props.docid);
     emit("showUpdate", "Hello from Child");
     loading.value = false;
     dialog.value = false;

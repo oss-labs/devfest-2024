@@ -8,7 +8,7 @@
 
     <v-app-bar-title>
       <nuxt-link
-        to="/"
+        to="/admin"
         style="text-decoration: none;color:black"
       >
         Application Admin
@@ -41,9 +41,9 @@ const { logoutUser, currentUser } = useAuth();
 //     theme.global.name.value == "light" ? "dark" : "light";
 // }
 
-// const toggleDrawer = ()=>{
-//   adminDrawer.value = !adminDrawer.value
-// }
+const toggleDrawer = ()=>{
+  adminDrawer.value = !adminDrawer.value
+}
 
 const logout = async () => {
   try {

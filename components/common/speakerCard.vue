@@ -11,8 +11,8 @@
             src="https://raw.githubusercontent.com/vrijraj/devfest-website-2023/main/src/assets/img/common/avatar.jpg"
           ></v-img>
         </v-avatar>
-        <h4 class="mb-0 mt-3">Full Name</h4>
-        <p>Designation</p>
+        <h4 class="mb-0 mt-3">{{props.data.name}}</h4>
+        <p>{{props.data.company.name}}</p>
       </div>
     </template>
 
@@ -27,8 +27,8 @@
             src="https://raw.githubusercontent.com/vrijraj/devfest-website-2023/main/src/assets/img/common/avatar.jpg"
           ></v-img>
         </v-avatar>
-        <h3 class="mt-3">Full Name</h3>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo aspernatur deleniti impedit aliquam, veritatis quasi, numquam voluptate fugit excepturi nihil eum. Quasi maiores laborum doloremque mollitia dolor optio eum aspernatur.</p>
+        <h3 class="mt-3">{{props.data.name}}</h3>
+        <p>{{props.data.bio}}</p>
 
         <common-speaker-social-button/>
       </v-container>
@@ -41,9 +41,13 @@
   
   <script setup>
 // Props
-defineProps({
-  id: String,
-});
+const props = defineProps({
+  data: {
+    type: Object,
+    default: {}
+  }
+})
+
 
 // Reactive variables
 const dialog = ref(false);

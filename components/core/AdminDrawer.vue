@@ -2,9 +2,10 @@
   <v-navigation-drawer v-model="adminDrawer" floating app color="#fdfbff">
     <v-list-item
       class="py-4"
-      title="App Name"
-      subtitle="App Sub Title"
+      :title="currentUser.displayName"
+      :subtitle="currentUser.email"
     ></v-list-item>
+    <!-- {{ currentUser }} -->
     <v-divider></v-divider>
     <v-list >
       <v-list-item
@@ -23,6 +24,7 @@
 </template>
 
 <script setup>
+const { currentUser } = useAuth();
 const adminDrawer = useAdminSideBar();
 
 const sidebarLinks = ref([
@@ -33,7 +35,7 @@ const sidebarLinks = ref([
   },
   {
     name: "Speakers",
-    icon: "mdi-toolbox-outline",
+    icon: "mdi-account-multiple-outline",
     link: "/admin/speakers",
   },
   {
@@ -43,7 +45,7 @@ const sidebarLinks = ref([
   },
   {
     name: "Team",
-    icon: "mdi-presentation",
+    icon: "mdi-account-switch-outline",
     link: "/admin/team",
   },
   {

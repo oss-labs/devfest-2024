@@ -45,7 +45,7 @@
               variant="outlined"
             ></v-text-field>
           </v-col>
-          
+
           <v-col md="6" cols="12" class="my-n2">
             <v-text-field
               label="Company Name"
@@ -113,6 +113,7 @@
             >
               {{ props.type === "add" ? "Add Speaker" : "Edit Speaker" }}</v-btn
             >
+            <v-btn variant="flat" class="mx-2" @click="dialog=false">Close</v-btn>
           </v-col>
         </v-row>
       </v-container>
@@ -139,7 +140,7 @@ let formData = ref({
     linkedin: "",
     twitter: "",
     instagram: "",
-    github:"",
+    github: "",
     web: "",
   },
 });

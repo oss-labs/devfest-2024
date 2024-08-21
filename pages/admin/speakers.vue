@@ -2,7 +2,10 @@
   <NuxtLayout name="admin">
     <!-- <h1>Projects Home</h1> -->
     <v-toolbar color="#F8F1F6" style="border-radius: 12px">
-      <v-toolbar-title>Speakers</v-toolbar-title>
+      <v-toolbar-title>
+        Speakers
+        <span v-if="speakersData.length">({{ speakersData.length }})</span>
+      </v-toolbar-title>
       <admin-speakers-add-edit-speaker
         type="add"
         @showUpdate="handleUpdateNotification"

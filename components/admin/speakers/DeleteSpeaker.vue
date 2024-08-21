@@ -11,20 +11,19 @@
         variant="tonal"
       ></v-btn>
     </template>
-    <v-card rounded="xl">
+    <v-card rounded="xl" class="pa-4">
       <v-container fluid>
         <v-row>
           <v-col>
             <h4>Delete Speaker</h4>
           </v-col>
         </v-row>
-        <v-row class="my-5">
+        <v-row class="mt-5">
           <v-col md="12" cols="12" class="my-n2">
             <p>Are you sure?</p>
             <p>Deleted Speaker Can't be Recover!!</p>
-            {{ props.docid }}
           </v-col>
-          <v-col md="12" cols="12" class="my-n2">
+          <v-col md="12" cols="12" class="mt-4">
             <v-btn
               :loading="loading"
               @click="deleteSpeakerData"
@@ -32,6 +31,7 @@
               color="primary"
               >Delete</v-btn
             >
+            <v-btn variant="flat" class="mx-2" @click="dialog=false">Close</v-btn>
           </v-col>
         </v-row>
       </v-container>

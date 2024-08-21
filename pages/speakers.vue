@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="default">
-    <v-container fluid>
+    <v-container fluid class="mt-5">
       <v-row>
         <v-col md="12">
           <h1>Speakers</h1>
@@ -12,15 +12,7 @@
           </p>
         </v-col>
       </v-row>
-      <v-row v-if="loading">
-        <v-col md="2" v-for="i in 6" :key="i">
-          <v-skeleton-loader
-            style="border-radius: 12px"
-            type="card"
-          ></v-skeleton-loader>
-        </v-col>
-      </v-row>
-      <v-row v-else>
+      <v-row>
         <v-col md="2" v-for="(item, index) in speakersData" :key="index">
           <common-speaker-card :data="item" />
         </v-col>
@@ -30,30 +22,50 @@
 </template>
 
 <script setup>
-const { getAllSpeakers } = useSpeakers();
+import speakersJSON from "/public/data/speakers.json";
+import configData from "/public/data/config.json";
 
-let loading = ref(true);
+const configDataSet = ref([]);
+configDataSet.value = configData;
+
 let speakersData = ref([]);
+speakersData.value = speakersJSON
 
 definePageMeta({
   layout: false,
 });
-onMounted(() => {
-  getAllSpeakersData();
+
+useSeoMeta({
+  contentType: "text/html; charset=utf-8",
+  title:
+    "Speakers - " +
+    configDataSet.value.eventInfo.name +
+    " | " +
+    configDataSet.value.communityName,
+  description: configDataSet.value.eventInfo.description.short,
+  keywords: configDataSet.value.seo.keywords,
+  author: "OSS Labs",
+  creator: "OSS Labs",
+  viewport: "width=device-width, initial-scale=1.0",
+  ogTitle:
+    "Speakers - " +
+    configDataSet.value.eventInfo.name +
+    " | " +
+    configDataSet.value.communityName,
+  ogDescription: configDataSet.value.eventInfo.description.short,
+  ogImage: `${configDataSet.value.seo.hostUrl}/thumbnail.png?auto=format&fit=crop&frame=1&h=512&w=1024`,
+  ogUrl: configDataSet.value.seo.hostUrl,
+  ogType: "website",
+  twitterTitle:
+    "Speakers - " +
+    configDataSet.value.eventInfo.name +
+    " | " +
+    configDataSet.value.communityName,
+  twitterDescription: configDataSet.value.eventInfo.description.short,
+  twitterImage: `${configDataSet.value.seo.hostUrl}thumbnail.png?auto=format&fit=crop&frame=1&h=512&w=1024`,
+  twitterCard: "summary_large_image",
 });
 
-const getAllSpeakersData = async () => {
-  try {
-    loading.value = true;
-    let res = await getAllSpeakers("speakers");
-    console.log(res);
-    speakersData.value = res;
-    loading.value = false;
-  } catch (error) {
-    console.log("error", error);
-    loading.value = false;
-  }
-};
 </script>
 
 <style>

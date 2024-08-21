@@ -29,7 +29,7 @@
       <v-btn rounded size="small" to="/agenda" class="mx-1">Agenda</v-btn>
       <v-btn rounded size="small" to="/badge" class="mx-1">Badge</v-btn>
       <v-btn rounded size="small" to="/team" class="mx-1">Team</v-btn>
-      <v-btn rounded size="small" to="/about" class="mx-1">About</v-btn>
+      <v-btn rounded size="small" to="/faq" class="mx-1">FAQ</v-btn>
     </v-app-bar>
     <v-main
       class="pa-0"

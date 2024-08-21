@@ -2,7 +2,7 @@
   <NuxtLayout name="default">
     <v-container fluid>
       <!-- Hero -->
-      <v-row>
+      <v-row v-if="configData">
         <v-col md="12">
           <v-img src="/img/home.png" rounded="xl"></v-img>
         </v-col>
@@ -15,18 +15,17 @@
             <v-icon icon="mdi-map-marker-check-outline" start></v-icon>
             {{ configData.eventInfo.venue.address }}</v-chip
           >
-
-          <h1 class="my-4" style="line-height: 65px"
+          <!-- {{ screenWidth }}
+          {{  screenWidth > 450 }} -->
+            <!-- style="line-height: 65px" -->
+          <h1 class="my-4" 
           :style="{ fontSize: screenWidth > 450 ? '450%' : '180%' }"
           >
             The city's most beloved tech <br />
             conference
           </h1>
-          <p class="">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi,
-            provident ratione. Ad, non fugit fuga molestias inventore <br />
-            debitis at necessitatibus eos eveniet placeat hic ipsum quidem
-            temporibus distinctio illum pariatur.
+          <p class="" :style="{ maxWidth: screenWidth > 450 ? '60%' : '100%' }">
+            {{ configDataSet.eventInfo.description.short }}
           </p>
           <v-btn
             rounded
@@ -47,7 +46,7 @@
 
           <v-container>
             <v-row justify="center">
-              <v-col md="2" v-for="(item, index) in stats" :key="index">
+              <v-col md="2" cols="6" v-for="(item, index) in stats" :key="index">
                 <div
                   style="background-color: #eeeeee; border-radius: 20px"
                   class="pa-2"
@@ -65,7 +64,7 @@
       <!-- Whats New -->
       <v-row>
         <!-- <HomeMoveSection /> -->
-        <HomeExpectionSection />
+        <HomeExpectionSection :data="whatToExpect" />
       </v-row>
       <!-- Whats New -->
 
@@ -77,7 +76,7 @@
 
       <!-- Past DevFest -->
       <v-row>
-        <HomePastDevFest />
+        <HomePastDevFest :data="configData.eventInfo.pastDevFest" />
       </v-row>
       <!-- Past DevFest -->
 
@@ -106,22 +105,12 @@
             style="background-color: #eeeeee; border-radius: 20px"
             class="pa-8"
           >
-            <h1>Keep in touch with GDG Jakarta for the latest announcements</h1>
+            <h1>Keep in touch with {{configData.communityName}} for the latest announcements</h1>
             <p class="mb-3">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam
-              porro placeat in pariatur molestiae? Omnis voluptas nobis labore
-              ipsum, cum illum culpa, quaerat quod ad eligendi et fuga deserunt
-              numquam?
+              Stake out #{{configData.communityName}} for the latest updates and news.
             </p>
 
-            <v-btn
-              class="ma-1"
-              icon="mdi-linkedin"
-              size="small"
-              variant="flat"
-              v-for="i in 4"
-              :key="i"
-            ></v-btn>
+            <CommonSpeakerSocialButton :socialLinks="configData.communityLinks"/>
           </div>
         </v-col>
       </v-row>

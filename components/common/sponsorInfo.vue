@@ -19,7 +19,7 @@
             <template v-slot:activator="{ on, attrs }">
               <a :href="sponsor.link" target="_blank" v-bind="attrs" v-on="on">
                 <v-img
-                  :src="sponsor.logo"
+                  :src="'/img/sponsors/'+sponsor.logo"
                 ></v-img>
               </a>
             </template>

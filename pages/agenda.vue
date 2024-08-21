@@ -5,22 +5,52 @@
         <v-col md="12">
           <h1>Agenda</h1>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti,
-            sapiente est architecto autem minus explicabo reiciendis voluptatem
-            porro rerum optio quidem quaerat animi eveniet magnam, pariatur non
-            delectus velit perferendis!
+            Follow code demonstrations by our expert speakers on different
+            tracks. Check out the schedule below and don't forget to mark your
+            calendar so that you don't miss out on any sessions.
           </p>
+        </v-col>
+      </v-row>
+      <v-row class="mb-7">
+        <v-col>
+          <v-toolbar flat class="px-0" style="border-radius: 15px">
+            <v-tabs
+              v-model="model"
+              color="primary"
+              slider-color="primary"
+              centered
+              class="px-3"
+            >
+              <v-tab v-for="(item, index) in scheduleData" :key="index" >{{
+                item.date
+              }}</v-tab>
+            </v-tabs>
+          </v-toolbar>
+
+          <v-tabs-items v-model="model" continuous class="mt-5 py-0" style="background-color: white;border-radius: 15px;">
+            <v-tab-item v-for="(item, index) in scheduleData" :key="index" class="pa-0 ma-0" >
+                <CommonScheduleDetails :data="item"/>
+            </v-tab-item>
+          </v-tabs-items>
         </v-col>
       </v-row>
     </v-container>
   </NuxtLayout>
 </template>
-  
+
 <script setup>
+import scheduleJSON from "/public/data/schedule.json";
+
+let scheduleData = ref([]);
+let model = ref(null)
+
+scheduleData.value = scheduleJSON
+
 definePageMeta({
   layout: false,
 });
+
 </script>
-  
-  <style>
+
+<style>
 </style>

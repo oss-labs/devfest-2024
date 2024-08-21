@@ -67,7 +67,7 @@ const getAllSpeakersData = async () => {
 
 var headers = ref([
   { title: "Name", align: "start", key: "name", width: "20%" },
-  { title: "Email", align: "start", key: "email", width: "50%" },
+  { title: "Community", align: "start", key: "community_title", width: "50%" },
   { title: "Actions", align: "start", key: "actions", width: "30%" },
 ]);
 </script>

@@ -28,7 +28,7 @@ export const useSpeakers = () => {
       );
       return querySnapshot.docs.map((doc) => ({
         ...doc.data(),
-        ...{ docid: doc.id }
+        ...{ docid: doc.id },
       }));
     } catch (error) {
       console.error("Error getting documents: ", error);

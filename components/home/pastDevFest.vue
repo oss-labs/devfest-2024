@@ -21,7 +21,7 @@
             <v-col md="4" class="pa-0">
               <v-img
                 gradient="to right, rgba(28,29,29,1), rgba(0,0,0,.1)"
-                src="/img/common/past-devfest.png"
+                src="/img/common/past-devfest.jpg"
                 rounded="lg"
                 class="justify-end"
               >

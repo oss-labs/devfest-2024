@@ -39,6 +39,11 @@ const sidebarLinks = ref([
     link: "/admin/speakers",
   },
   {
+    name: "Sponsors",
+    icon: "mdi-currency-usd",
+    link: "/admin/sponsors",
+  },
+  {
     name: "Agenda",
     icon: "mdi-presentation",
     link: "/admin/agenda",

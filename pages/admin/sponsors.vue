@@ -2,11 +2,11 @@
   <NuxtLayout name="admin">
     <!-- <h1>Projects Home</h1> -->
     <v-toolbar color="#F8F1F6" style="border-radius: 12px">
-      <v-toolbar-title>Team
-        <span v-if="teamData.length">({{ teamData.length }})</span>
-
+      <v-toolbar-title>
+        Sponsors
+        <span v-if="sponsorsData.length">({{ sponsorsData.length }})</span>
       </v-toolbar-title>
-      <admin-team-add-edit-team
+      <admin-sponsors-add-edit-sponsor
         type="add"
         @showUpdate="handleUpdateNotification"
       />
@@ -16,15 +16,15 @@
       style="background-color: #f8f1f6; border-radius: 12px"
       class="mt-4"
       :headers="headers"
-      :items="teamData"
+      :items="sponsorsData"
       :loading="loading"
     >
       <template v-slot:[`item.actions`]="{ item }">
-        <admin-team-delete-team
+        <admin-sponsors-delete-sponsor
           @showUpdate="handleUpdateNotification"
           :docid="item.docid"
         />
-        <admin-team-add-edit-team
+        <admin-sponsors-add-edit-sponsor
           type="edit"
           :item="item"
           @showUpdate="handleUpdateNotification"
@@ -36,7 +36,7 @@
       
   <script setup>
 const { currentUser } = useAuth();
-const { getAllTeam } = useTeam();
+const { getAllSponsors } = useSponsors();
 
 definePageMeta({
   layout: false,
@@ -44,23 +44,23 @@ definePageMeta({
 });
 
 let loading = ref(true);
-let teamData = ref([]);
+let sponsorsData = ref([]);
 
 onMounted(() => {
-  getAllTeamData();
+  getAllSponsorsData();
 });
 
 const handleUpdateNotification = (message) => {
   console.log("message", message);
-  getAllTeamData();
+  getAllSponsorsData();
 };
 
-const getAllTeamData = async () => {
+const getAllSponsorsData = async () => {
   try {
     loading.value = true;
-    let res = await getAllTeam("team");
+    let res = await getAllSponsors("sponsors");
     console.log(res);
-    teamData.value = res;
+    sponsorsData.value = res;
     loading.value = false;
   } catch (error) {
     console.log("error", error);
@@ -70,7 +70,7 @@ const getAllTeamData = async () => {
 
 var headers = ref([
   { title: "Name", align: "start", key: "name", width: "20%" },
-  { title: "Type", align: "start", key: "type", width: "50%" },
+  // { title: "Community", align: "start", key: "community_title", width: "50%" },
   { title: "Actions", align: "start", key: "actions", width: "30%" },
 ]);
 </script>

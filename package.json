@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
+    "firebase": "^10.13.0",
     "nuxt": "^3.12.4",
     "vue": "latest"
   },

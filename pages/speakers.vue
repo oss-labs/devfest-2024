@@ -1,4 +1,5 @@
 <template>
+   <NuxtLayout name="default">
   <v-container fluid>
     <v-row>
         <v-col md="12">
@@ -12,12 +13,13 @@
         </v-col>
     </v-row>
   </v-container>
+</NuxtLayout>
 </template>
 
-<script>
-export default {
-
-}
+<script setup>
+definePageMeta({
+  layout: false,
+});
 </script>
 
 <style>

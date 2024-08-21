@@ -3,15 +3,15 @@
     <template v-slot:activator="{ props: activatorProps }">
       <div
         v-bind="activatorProps"
-        style="border: 1.5px solid black; border-radius: 12px; cursor: pointer"
+        style="border-radius: 12px; cursor: pointer;background-color: #EEEEEE;"
         class="text-center py-5"
       >
-        <v-avatar size="120">
+        <v-avatar size="100">
           <v-img
             src="https://raw.githubusercontent.com/vrijraj/devfest-website-2023/main/src/assets/img/common/avatar.jpg"
           ></v-img>
         </v-avatar>
-        <p>Full Name</p>
+        <h4 class="mb-0 mt-3">Full Name</h4>
         <p>Designation</p>
       </div>
     </template>
@@ -19,10 +19,18 @@
     <v-card
       max-width="800"
       rounded="xl"
+      class="pa-4"
     >
       <v-container fluid>
-        <h1>Heading</h1>
+        <v-avatar size="100">
+          <v-img
+            src="https://raw.githubusercontent.com/vrijraj/devfest-website-2023/main/src/assets/img/common/avatar.jpg"
+          ></v-img>
+        </v-avatar>
+        <h3 class="mt-3">Full Name</h3>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo aspernatur deleniti impedit aliquam, veritatis quasi, numquam voluptate fugit excepturi nihil eum. Quasi maiores laborum doloremque mollitia dolor optio eum aspernatur.</p>
+
+        <common-speaker-social-button/>
       </v-container>
       <template v-slot:actions>
         <v-btn text @click="dialog = false">Close</v-btn>

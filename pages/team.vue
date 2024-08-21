@@ -12,15 +12,7 @@
           </p>
         </v-col>
       </v-row>
-      <v-row v-if="loading">
-        <v-col md="2" v-for="i in 6" :key="i">
-          <v-skeleton-loader
-            style="border-radius: 12px"
-            type="card"
-          ></v-skeleton-loader>
-        </v-col>
-      </v-row>
-      <v-row v-else>
+      <v-row>
         <v-col md="2" v-for="(item, index) in teamData" :key="index">
           <common-speaker-card :data="item" />
         </v-col>
@@ -30,30 +22,16 @@
 </template>
 
 <script setup>
-const { getAllTeam } = useTeam();
+import teamJSON from "/public/data/team.json";
 
-let loading = ref(true);
 let teamData = ref([]);
+
+teamData.value = teamJSON
 
 definePageMeta({
   layout: false,
 });
-onMounted(() => {
-  getAllTeamData();
-});
 
-const getAllTeamData = async () => {
-  try {
-    loading.value = true;
-    let res = await getAllTeam("team");
-    console.log(res);
-    teamData.value = res;
-    loading.value = false;
-  } catch (error) {
-    console.log("error", error);
-    loading.value = false;
-  }
-};
 </script>
 
 <style>

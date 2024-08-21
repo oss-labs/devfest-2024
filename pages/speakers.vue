@@ -12,15 +12,7 @@
           </p>
         </v-col>
       </v-row>
-      <v-row v-if="loading">
-        <v-col md="2" v-for="i in 6" :key="i">
-          <v-skeleton-loader
-            style="border-radius: 12px"
-            type="card"
-          ></v-skeleton-loader>
-        </v-col>
-      </v-row>
-      <v-row v-else>
+      <v-row>
         <v-col md="2" v-for="(item, index) in speakersData" :key="index">
           <common-speaker-card :data="item" />
         </v-col>
@@ -30,30 +22,16 @@
 </template>
 
 <script setup>
-const { getAllSpeakers } = useSpeakers();
+import speakersJSON from "/public/data/speakers.json";
 
-let loading = ref(true);
 let speakersData = ref([]);
+
+speakersData.value = speakersJSON
 
 definePageMeta({
   layout: false,
 });
-onMounted(() => {
-  getAllSpeakersData();
-});
 
-const getAllSpeakersData = async () => {
-  try {
-    loading.value = true;
-    let res = await getAllSpeakers("speakers");
-    console.log(res);
-    speakersData.value = res;
-    loading.value = false;
-  } catch (error) {
-    console.log("error", error);
-    loading.value = false;
-  }
-};
 </script>
 
 <style>

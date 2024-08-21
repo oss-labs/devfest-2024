@@ -10,39 +10,14 @@
           through lightning talks, sessions, workshops, etc.
         </p>
       </v-col>
-      <v-col md="4" cols="12">
+      <v-col md="4" cols="12" v-for="(item, index) in data" :key="index">
         <div
           style="background-color: #eeeeee; border-radius: 20px"
           class="pa-8"
         >
-          <h2>Technical content</h2>
+          <h2>{{item.title}}</h2>
           <p>
-            Events hosted by the Google Developer Groups community, featuring
-            leading experts on Google technologies in areas.
-          </p>
-        </div>
-      </v-col>
-      <v-col md="4" cols="12">
-        <div
-          style="background-color: #eeeeee; border-radius: 20px"
-          class="pa-8"
-        >
-          <h2>Technical content</h2>
-          <p>
-            Events hosted by the Google Developer Groups community, featuring
-            leading experts on Google technologies in areas.
-          </p>
-        </div>
-      </v-col>
-      <v-col md="4">
-        <div
-          style="background-color: #eeeeee; border-radius: 20px"
-          class="pa-8"
-        >
-          <h2>Technical content</h2>
-          <p>
-            Events hosted by the Google Developer Groups community, featuring
-            leading experts on Google technologies in areas.
+            {{item.description}}
           </p>
         </div>
       </v-col>
@@ -52,7 +27,7 @@
 
 <script>
 export default {
-
+  props:['data']
 }
 </script>
 

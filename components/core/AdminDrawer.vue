@@ -32,14 +32,24 @@ const sidebarLinks = ref([
     link: "/admin",
   },
   {
-    name: "Projects",
+    name: "Speakers",
     icon: "mdi-toolbox-outline",
-    link: "/admin/projects",
+    link: "/admin/speakers",
   },
   {
-    name: "Talks",
+    name: "Agenda",
     icon: "mdi-presentation",
-    link: "/admin/talks",
+    link: "/admin/agenda",
+  },
+  {
+    name: "Team",
+    icon: "mdi-presentation",
+    link: "/admin/team",
+  },
+  {
+    name: "Config",
+    icon: "mdi-presentation",
+    link: "/admin/config",
   },
 ]);
 </script>

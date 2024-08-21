@@ -1,0 +1,76 @@
+<template>
+  <v-dialog v-model="dialog" width="500">
+    <template v-slot:activator="{ props: activatorProps }">
+      <v-btn
+        size="x-small"
+        @click="dialog = true"
+        icon="mdi-delete"
+        v-bind="activatorProps"
+        color="primary"
+        class="mx-2"
+        variant="tonal"
+      ></v-btn>
+    </template>
+    <v-card rounded="xl">
+      <v-container fluid>
+        <v-row>
+          <v-col>
+            <h4>Delete Project</h4>
+          </v-col>
+        </v-row>
+        <v-row class="my-5">
+          <v-col md="12" cols="12" class="my-n2">
+            <p>Are you sure?</p>
+            <p>Deleted Project Can't be Recover!!</p>
+            {{ props.docid }}
+          </v-col>
+          <v-col md="12" cols="12" class="my-n2">
+            <v-btn
+              :loading="loading"
+              @click="deleteProjectData"
+              variant="flat"
+              color="primary"
+              >Delete</v-btn
+            >
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-card>
+  </v-dialog>
+</template>
+  
+  <script setup>
+import { defineEmits } from "vue";
+const { deleteProject } = useProjects();
+
+let dialog = ref(false);
+let loading = ref(false);
+
+const props = defineProps({
+  docid: {
+    type: String,
+    required: true,
+  },
+});
+
+// Define the emit function
+const emit = defineEmits(["showUpdate"]);
+
+const deleteProjectData = async () => {
+  try {
+    loading.value = true;
+    console.log("deleting projects whose doc id is::::", props.docid);
+    let res = await deleteProject("projects", props.docid);
+    emit("showUpdate", "Hello from Child");
+    loading.value = false;
+    dialog.value = false;
+    console.log("res", res);
+  } catch (error) {
+    loading.value = false;
+    console.log("errpr", error);
+  }
+};
+</script>
+  
+  <style>
+</style>

@@ -1,0 +1,28 @@
+[
+    {
+        "day": "1",
+        "date": "Oct 23",
+        "schedule": [
+            {
+                "startTime": "03:30",
+                "endTime": "04:00",
+                "session": 1001
+            },
+            {
+                "startTime": "04:00",
+                "endTime": "04:40",
+                "session": 1002
+            },
+            {
+                "startTime": "04:50",
+                "endTime": "05:30",
+                "session": 1003
+            },
+            {
+                "startTime": "05:40",
+                "endTime": "06:00",
+                "session": 1004
+            }
+        ]
+    }
+]

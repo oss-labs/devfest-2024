@@ -1,0 +1,67 @@
+{
+  "name": "DevFest Jakarta",
+  "cover_image": "cover.png",
+  "desc": {
+    "short": "An annual event hosted by the Google Developers Group across the world to bring the technology closer to the developers. It is an all day developer conference where we aim to focus on multiple technologies through lightning talks, sessions, workshops, etc.",
+    "long": "An annual event hosted by the Google Developers Group across the world to bring the technology closer to the developers. It is an all day developer conference where we aim to focus on multiple technologies through lightning talks, sessions, workshops, etc.An annual event hosted by the Google Developers Group across the world to bring the technology closer to the developers. It is an all day developer conference where we aim to focus on multiple technologies through lightning talks, sessions, workshops, etc."
+  },
+  "hashtags": ["DevFest2023", "CommunityName"],
+  "date": "Oct 23, 2023",
+  "time": "10 am IST",
+  "venue": {
+    "name": "Hotel Name",
+    "address": "23b, Morden Town",
+    "city": "",
+    "pincode": "",
+    "map": ""
+  },
+  "registration": {
+    "link": "https://techferment.com",
+    "status": "1"
+  },
+  "call_for_speakers": {
+    "status": "0",
+    "link": "",
+    "lastdate": ""
+  },
+  "stats": [
+    {
+      "name": "Tracks",
+      "value": "4"
+    },
+    {
+      "name": "Speakers",
+      "value": "20+"
+    },
+    {
+      "name": "Participants",
+      "value": "500+"
+    },
+    {
+      "name": "Sessions",
+      "value": "20"
+    },
+    {
+      "name": "Day",
+      "value": "1"
+    },
+    {
+      "name": "Workshops",
+      "value": "5"
+    }
+  ],
+  "what_to_expect": [
+    {
+      "label": "Technical content",
+      "value": "Events hosted by the Google Developer Groups community, featuring leading experts on Google technologies in areas."
+    },
+    {
+      "label": "Technical content",
+      "value": "Events hosted by the Google Developer Groups community, featuring leading experts on Google technologies in areas."
+    },
+    {
+      "label": "Technical content",
+      "value": "Events hosted by the Google Developer Groups community, featuring leading experts on Google technologies in areas."
+    }
+  ]
+}

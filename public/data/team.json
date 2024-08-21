@@ -1,0 +1,53 @@
+[
+    {
+        "id": "6001",
+        "name": "Vrijraj Singh",
+        "company": {
+            "name": "agprop",
+            "designation": "Tech Lead"
+        },
+        "community_title": "Google Developer Expert for Firebase & Web",
+        "image": "",
+        "bio": "Vrijraj is a dedicated Tech Lead at agprop and a passionate advocate for community engagement. He actively contributes to the TechFerment community and holds the esteemed title of Google Developers Expert for Firebase and Web Technologies. With a wealth of experience, he has conducted over 300 talks and workshops, sharing his knowledge with various communities. Vrijraj's expertise lies in Web development, Firebase, Google Cloud Platform, and UI/UX Design. He possesses a strong drive for learning new technologies and leveraging them to build innovative solutions. Alongside his professional endeavors, Vrijraj takes pleasure in mentoring individuals and nurturing communities. During his leisure time, he indulges in his love for food and enjoys watching YouTube videos.",
+        "social": {
+            "linkedin": "asd",
+            "twitter": "asd",
+            "web": "asd"
+        },
+        "type":"Core"
+    },
+    {
+        "id": "6002",
+        "name": "Vrijraj Singh",
+        "company": {
+            "name": "agprop",
+            "designation": "Tech Lead"
+        },
+        "community_title": "Google Developer Expert for Firebase & Web",
+        "image": "",
+        "bio": "Vrijraj is a dedicated Tech Lead at agprop and a passionate advocate for community engagement. He actively contributes to the TechFerment community and holds the esteemed title of Google Developers Expert for Firebase and Web Technologies. With a wealth of experience, he has conducted over 300 talks and workshops, sharing his knowledge with various communities. Vrijraj's expertise lies in Web development, Firebase, Google Cloud Platform, and UI/UX Design. He possesses a strong drive for learning new technologies and leveraging them to build innovative solutions. Alongside his professional endeavors, Vrijraj takes pleasure in mentoring individuals and nurturing communities. During his leisure time, he indulges in his love for food and enjoys watching YouTube videos.",
+        "social": {
+            "linkedin": "asd",
+            "twitter": "asd",
+            "web": "asd"
+        },
+        "type":"Core"
+    },
+    {
+        "id": "6002",
+        "name": "Vrijraj Singh",
+        "company": {
+            "name": "agprop",
+            "designation": "Tech Lead"
+        },
+        "community_title": "Google Developer Expert for Firebase & Web",
+        "image": "",
+        "bio": "Vrijraj is a dedicated Tech Lead at agprop and a passionate advocate for community engagement. He actively contributes to the TechFerment community and holds the esteemed title of Google Developers Expert for Firebase and Web Technologies. With a wealth of experience, he has conducted over 300 talks and workshops, sharing his knowledge with various communities. Vrijraj's expertise lies in Web development, Firebase, Google Cloud Platform, and UI/UX Design. He possesses a strong drive for learning new technologies and leveraging them to build innovative solutions. Alongside his professional endeavors, Vrijraj takes pleasure in mentoring individuals and nurturing communities. During his leisure time, he indulges in his love for food and enjoys watching YouTube videos.",
+        "social": {
+            "linkedin": "asd",
+            "twitter": "asd",
+            "web": "asd"
+        },
+        "type":"Volunteer"
+    }
+]

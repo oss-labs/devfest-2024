@@ -1,19 +1,13 @@
 <template>
   <v-app-bar
     :elevation="0"
-    class="mt-0 px-2 mx-auto mt-4"
+    class="mt-0 px-2 toolbar-class mx-auto mt-4"
     rounded="xl"
     color="#eeeeee"
-    style="
-      max-width: 1024px;
-      margin-left: auto;
-      margin-right: auto;
-      position: relative;
-    "
   >
     <v-app-bar-title
       ><NuxtLink to="/" style="text-decoration: none; color: black">
-        DevFest City
+        DevFest {{ configData.communityLocation.city }}
       </NuxtLink></v-app-bar-title
     >
     <v-spacer></v-spacer>
@@ -23,9 +17,9 @@
       <v-btn rounded size="small" to="/badge" class="mx-1">Badge</v-btn>
       <v-btn rounded size="small" to="/team" class="mx-1">Team</v-btn>
       <v-btn rounded size="small" to="/faq" class="mx-1">FAQ</v-btn>
-      </div>
-    
-    <!-- <v-btn
+    </div>
+
+    <v-btn
       rounded
       v-if="
         configData &&
@@ -33,11 +27,13 @@
         new Date(configData.eventInfo.registeration.end_date) > new Date()
       "
       :href="configData.eventInfo.registeration.link"
-      class="action_btn d-md-flex d-lg-flex d-sm-flex d-none"
+      class="d-md-flex d-lg-flex d-sm-flex d-none mr-3"
       :size="screenWidth < 400 ? 'x-small' : 'small'"
       target="_blank"
+      color="#4182F1"
+      variant="flat"
       >Register Now</v-btn
-    > -->
+    > 
     <v-app-bar-nav-icon
       class="d-md-none d-lg-none d-sm-flex d-flex"
       @click="drawerAction"
@@ -48,16 +44,40 @@
 <script setup>
 import { useDisplay } from "vuetify";
 import configData from "/public/data/config.json";
-const { width, mobile } = useDisplay();
 const sidebar = useSideBar();
-const screenWidth = ref(0);
-const configDataSet = ref([]);
+const { width, mobile } = useDisplay();
 
+const screenWidth = ref(width);
+
+const configDataSet = ref([]);
 configDataSet.value = configData;
-screenWidth.value = width;
 
 const drawerAction = () => {
   sidebar.value = !sidebar.value;
 };
 </script>
+
+<style scoped>
+/* Mobile breakpoint */
+@media (max-width: 700px) { 
+  .toolbar-class {
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    position: relative !important;
+    margin-top: 0 !important;
+    border-radius: 0 !important;
+  }
+}
+
+/* Tablet and larger screens */
+@media (min-width: 700px) {
+  .toolbar-class {
+    max-width: 1024px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    position: relative !important;
+  }
+}
+</style>
 

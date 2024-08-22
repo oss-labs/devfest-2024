@@ -2,63 +2,9 @@
   <NuxtLayout name="default">
     <v-container fluid>
       <!-- Hero -->
-      <v-row v-if="configData">
-        <v-col md="12">
-          <v-img src="/img/common/home.png" rounded="xl"></v-img>
-        </v-col>
-        <v-col class="text-center" cols="12">
-          <v-chip class="mx-1" size="large">
-            <v-icon icon="mdi-calendar-month-outline" start></v-icon>
-            {{ configData.eventInfo.date }}</v-chip
-          >
-          <v-chip class="mx-1" size="large">
-            <v-icon icon="mdi-map-marker-check-outline" start></v-icon>
-            {{ configData.eventInfo.venue.address }}</v-chip
-          >
-          <!-- {{ screenWidth }}
-          {{  screenWidth > 450 }} -->
-            <!-- style="line-height: 65px" -->
-          <h1 class="my-4" 
-          :style="{ fontSize: screenWidth > 450 ? '450%' : '180%' }"
-          >
-            The city's most beloved tech <br />
-            conference
-          </h1>
-          <p class="" :style="{ maxWidth: screenWidth > 450 ? '60%' : '100%' }">
-            {{ configDataSet.eventInfo.description.short }}
-          </p>
-          <v-btn
-            rounded
-            size="large"
-            color="#4182F1"
-            v-if="
-              configData &&
-              configData.eventInfo.registeration.link.length &&
-              new Date(configData.eventInfo.registeration.end_date) > new Date()
-            "
-            :href="configData.eventInfo.registeration.link"
-            class="my-4"
-            target="_blank"
-            style="border: 1.5px solid #1e1e1e; color: black"
-            variant="flat"
-            >Register Now</v-btn
-          >
-
-          <v-container>
-            <v-row justify="center">
-              <v-col md="2" cols="6" v-for="(item, index) in stats" :key="index">
-                <div
-                  style="background-color: #eeeeee; border-radius: 20px"
-                  class="pa-2"
-                >
-                  <h1>{{ item.value }}</h1>
-                  <p>{{ item.name }}</p>
-                </div>
-              </v-col>
-            </v-row>
-          </v-container>
-        </v-col>
-      </v-row>
+      <v-row>
+        <HomeHeroSection :eventInfo="configData.eventInfo" :stats="stats"/>
+      </v-row>  
       <!-- Hero -->
 
       <!-- Whats New -->
@@ -120,17 +66,13 @@
 </template>
 
 <script setup>
-import { useDisplay } from "vuetify";
 import configData from "/public/data/config.json";
 
-const { width, mobile } = useDisplay();
-const screenWidth = ref(0);
 let whatToExpect = ref([]);
 let stats = ref([]);
 
 const configDataSet = ref([]);
 configDataSet.value = configData;
-screenWidth.value = width;
 
 stats.value = configDataSet.value.eventInfo.stats;
 whatToExpect.value = configDataSet.value.eventInfo.whatToExpect;

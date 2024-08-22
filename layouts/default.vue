@@ -1,7 +1,10 @@
 <template>
   <v-app style="background-color: white" class="google-font">
     <CoreAppToolbar />
-    <CoreAppDrawer/>
+    <ClientOnly>
+      <CoreAppDrawer/>
+    </ClientOnly>
+    
 
     <v-main
       class="pa-0"

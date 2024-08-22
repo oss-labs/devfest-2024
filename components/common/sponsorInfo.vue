@@ -5,7 +5,9 @@
       :key="index"
       class="google-font mb-5 mt-0"
     >
-      <v-col md="12" cols="12" class="mb-n1"><b>{{ item.category_name }}</b></v-col>
+      <v-col md="12" cols="12" class="mb-n1"
+        ><b>{{ item.category_name }}</b></v-col
+      >
       <v-col
         md="2"
         cols="6"
@@ -14,17 +16,20 @@
         v-for="(sponsor, indexp) in item.sponsors"
         :key="indexp"
       >
-        <div style="background-color: #EEEEEE; border-radius: 15px" class="pa-5">
-          <v-tooltip bottom>
-            <template v-slot:activator="{ on, attrs }">
-              <a :href="sponsor.link" target="_blank" v-bind="attrs" v-on="on">
-                <v-img
-                  :src="'/img/sponsors/'+sponsor.logo"
-                ></v-img>
+        <div
+          style="background-color: #eeeeee; border-radius: 15px"
+          class="pa-5"
+        >
+        <ClientOnly>
+          <v-tooltip location="bottom" :key="indexp">
+            <template v-slot:activator="{ props }">
+              <a :href="sponsor.link" target="_blank" v-bind="props">
+                <v-img :src="'/img/sponsors/' + sponsor.logo"></v-img>
               </a>
             </template>
-            <span>{{ sponsor.name }}</span>
+            <span>{{sponsor.name}}</span>
           </v-tooltip>
+        </ClientOnly>
         </div>
       </v-col>
     </v-row>

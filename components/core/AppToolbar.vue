@@ -1,8 +1,7 @@
 <template>
   <v-app-bar
-    app
     :elevation="0"
-    class="mx-auto mt-4 px-2"
+    class="mt-0 px-2 mx-auto mt-4"
     rounded="xl"
     color="#eeeeee"
     style="

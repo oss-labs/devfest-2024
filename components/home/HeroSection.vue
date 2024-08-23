@@ -1,12 +1,21 @@
 <template>
   <v-container fluid>
     <v-row v-if="Object.keys(props.eventInfo).length">
-      <v-col md="12">
-        <v-img v-if="screenWidth>600" src="/public/img/common/home-desktop.png" lazy-src="/public/img/common/home-desktop.png" rounded="xl"></v-img>
-        <v-img v-else src="/public/img/common/home-mobile.png" lazy-src="/public/img/common/home-mobile.png" rounded="xl"></v-img>
+      <v-col md="12 ">
+        <v-img
+          v-if="screenWidth > 600"
+          src="/public/img/common/home-desktop.png"
+          lazy-src="/public/img/common/home-desktop.png"
+          rounded="xl"
+        ></v-img>
+        <v-img
+          v-else
+          src="/public/img/common/home-mobile.png"
+          lazy-src="/public/img/common/home-mobile.png"
+          rounded="xl"
+        ></v-img>
       </v-col>
 
-  
       <v-col class="text-center" cols="12">
         <v-chip class="mx-1" size="large">
           <v-icon icon="mdi-calendar-month-outline" start></v-icon>
@@ -16,11 +25,21 @@
           <v-icon icon="mdi-map-marker-check-outline" start></v-icon>
           {{ props.eventInfo.venue.address }}</v-chip
         >
-
-        <h1 class="my-4" :style="{ fontSize: screenWidth>600?'450%':'200%', lineHeight: '100%' }">
+        <h1 class="responsive-h1 my-4">
           The city's most beloved tech <br />
           conference
         </h1>
+
+        <!-- <h1
+          class="my-4"
+          :style="{
+            fontSize: screenWidth > 600px ? '450%' : '200%',
+            lineHeight: '100%',
+          }"
+        >
+          The city's most beloved tech <br />
+          conference
+        </h1> -->
         <p class="" :style="{ maxWidth: '90%' }">
           {{ props.eventInfo.description.short }}
         </p>
@@ -65,16 +84,27 @@ const { width, mobile } = useDisplay();
 const screenWidth = ref(width);
 
 let props = defineProps({
-    eventInfo: {
-        type: Object,
-        default: {}
-    },
-    stats: {
-        type: Array,
-        default: []
-    }
-})
+  eventInfo: {
+    type: Object,
+    default: {},
+  },
+  stats: {
+    type: Array,
+    default: [],
+  },
+});
 </script>
 
-<style>
+<style scoped>
+.responsive-h1 {
+  font-size: 200%;
+  line-height: 100%;
+}
+
+/* Media query for screens larger than 600px */
+@media (min-width: 600px) {
+  .responsive-h1 {
+    font-size: 450%;
+  }
+}
 </style>

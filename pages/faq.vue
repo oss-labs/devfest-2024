@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="default">
-    <v-container fluid class="mt-5">
+    <v-container fluid class="m-top">
       <v-row>
         <v-col md="8">
           <h1>Frequently asked questions</h1>
@@ -43,7 +43,7 @@
     </v-container>
   </NuxtLayout>
 </template>
-  
+
 <script setup>
 import faqData from "/public/data/faq.json";
 import configData from "/public/data/config.json";
@@ -89,6 +89,9 @@ useSeoMeta({
   twitterCard: "summary_large_image",
 });
 </script>
-  
-  <style>
+
+<style scoped>
+.m-top {
+  margin-top: 10%;
+}
 </style>

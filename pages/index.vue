@@ -1,10 +1,10 @@
 <template>
   <NuxtLayout name="default">
-    <v-container fluid>
+    <v-container fluid class="m-top">
       <!-- Hero -->
       <v-row>
-        <HomeHeroSection :eventInfo="configData.eventInfo" :stats="stats"/>
-      </v-row>  
+        <HomeHeroSection :eventInfo="configData.eventInfo" :stats="stats" />
+      </v-row>
       <!-- Hero -->
 
       <!-- Whats New -->
@@ -51,12 +51,18 @@
             style="background-color: #eeeeee; border-radius: 20px"
             class="pa-8"
           >
-            <h1>Keep in touch with {{configData.communityName}} for the latest announcements</h1>
+            <h1>
+              Keep in touch with {{ configData.communityName }} for the latest
+              announcements
+            </h1>
             <p class="mb-3">
-              Stake out #{{configData.communityName}} for the latest updates and news.
+              Stake out #{{ configData.communityName }} for the latest updates
+              and news.
             </p>
 
-            <CommonSpeakerSocialButton :socialLinks="configData.communityLinks"/>
+            <CommonSpeakerSocialButton
+              :socialLinks="configData.communityLinks"
+            />
           </div>
         </v-col>
       </v-row>
@@ -110,5 +116,8 @@ useSeoMeta({
 });
 </script>
 
-<style>
+<style scoped>
+.m-top {
+  margin-top: 10%;
+}
 </style>

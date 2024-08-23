@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="default">
-    <v-container fluid class="mt-5">
+    <v-container fluid class="m-top">
       <!-- Mobile -->
       <v-row>
         <v-col md="12" lg="12" class="d-block d-sm-block d-md-none px-0">
@@ -298,6 +298,9 @@ export default {
 };
 </script>
 <style scoped>
+.m-top {
+  margin-top: 10%;
+}
 .v-btn-group {
   border: 1px solid #757575;
   border-radius: 18px;

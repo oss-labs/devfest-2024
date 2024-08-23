@@ -1,6 +1,7 @@
 <template>
   <v-app-bar
     :elevation="0"
+    fixed
     class="mt-0 px-2 toolbar-class mx-auto mt-4"
     rounded="xl"
     color="#eeeeee"
@@ -33,7 +34,7 @@
       color="#4182F1"
       variant="flat"
       >Register Now</v-btn
-    > 
+    >
     <v-app-bar-nav-icon
       class="d-md-none d-lg-none d-sm-flex d-flex"
       @click="drawerAction"
@@ -58,13 +59,21 @@ const drawerAction = () => {
 </script>
 
 <style scoped>
+.toolbar-class {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  margin-bottom: 80px;
+  height: 64px; /* Set the height of the toolbar */
+}
 /* Mobile breakpoint */
-@media (max-width: 700px) { 
+@media (max-width: 700px) {
   .toolbar-class {
     max-width: 100% !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    position: relative !important;
     margin-top: 0 !important;
     border-radius: 0 !important;
   }
@@ -76,8 +85,6 @@ const drawerAction = () => {
     max-width: 1024px !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    position: relative !important;
   }
 }
 </style>
-

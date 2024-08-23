@@ -1,11 +1,13 @@
 <template>
   <NuxtLayout name="default">
-    <v-container fluid class="mt-5">
+    <v-container fluid class="m-top">
       <v-row>
         <v-col md="12">
           <h1>Code of Conduct</h1>
-          <p> All participants of DevFest 2024 event, online attendees,
-            event staff, and speakers, must abide by the following policy:</p>
+          <p>
+            All participants of DevFest 2024 event, online attendees, event
+            staff, and speakers, must abide by the following policy:
+          </p>
 
           <v-container fluid class="ma-0 pa-0 mt-6">
             <v-row align="start" justify="start">
@@ -32,8 +34,8 @@
     </v-container>
   </NuxtLayout>
 </template>
-    
-  <script setup>
+
+<script setup>
 import configData from "/public/data/config.json";
 
 const configDataSet = ref([]);
@@ -97,6 +99,5 @@ useSeoMeta({
   twitterCard: "summary_large_image",
 });
 </script>
-    
-    <style>
-</style>
+
+.m-top { margin-top: 10%; }

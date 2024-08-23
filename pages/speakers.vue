@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="default">
-    <v-container fluid class="mt-5">
+    <v-container fluid class="m-top">
       <v-row>
         <v-col md="12">
           <h1>Speakers</h1>
@@ -13,7 +13,12 @@
         </v-col>
       </v-row>
       <v-row>
-        <v-col md="2" cols="6" v-for="(item, index) in speakersData" :key="index">
+        <v-col
+          md="2"
+          cols="6"
+          v-for="(item, index) in speakersData"
+          :key="index"
+        >
           <common-speaker-card :data="item" />
         </v-col>
       </v-row>
@@ -29,7 +34,7 @@ const configDataSet = ref([]);
 configDataSet.value = configData;
 
 let speakersData = ref([]);
-speakersData.value = speakersJSON
+speakersData.value = speakersJSON;
 
 definePageMeta({
   layout: false,
@@ -65,8 +70,10 @@ useSeoMeta({
   twitterImage: `${configDataSet.value.seo.hostUrl}thumbnail.png?auto=format&fit=crop&frame=1&h=512&w=1024`,
   twitterCard: "summary_large_image",
 });
-
 </script>
 
-<style>
+<style scoped>
+.m-top {
+  margin-top: 10%;
+}
 </style>

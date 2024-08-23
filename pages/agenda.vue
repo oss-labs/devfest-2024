@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="default">
-    <v-container fluid class="mt-5">
+    <v-container fluid class="m-top">
       <v-row>
         <v-col md="12">
           <h1>Agenda</h1>
@@ -21,15 +21,24 @@
               centered
               class="px-3"
             >
-              <v-tab v-for="(item, index) in scheduleData" :key="index" >{{
+              <v-tab v-for="(item, index) in scheduleData" :key="index">{{
                 item.date
               }}</v-tab>
             </v-tabs>
           </v-toolbar>
 
-          <v-tabs-items v-model="model" continuous class="mt-5 py-0" style="background-color: white;border-radius: 15px;">
-            <v-tab-item v-for="(item, index) in scheduleData" :key="index" class="pa-0 ma-0" >
-                <CommonScheduleDetails :data="item"/>
+          <v-tabs-items
+            v-model="model"
+            continuous
+            class="mt-5 py-0"
+            style="background-color: white; border-radius: 15px"
+          >
+            <v-tab-item
+              v-for="(item, index) in scheduleData"
+              :key="index"
+              class="pa-0 ma-0"
+            >
+              <CommonScheduleDetails :data="item" />
             </v-tab-item>
           </v-tabs-items>
         </v-col>
@@ -46,9 +55,9 @@ const configDataSet = ref([]);
 configDataSet.value = configData;
 
 let scheduleData = ref([]);
-let model = ref(null)
+let model = ref(null);
 
-scheduleData.value = scheduleJSON
+scheduleData.value = scheduleJSON;
 
 definePageMeta({
   layout: false,
@@ -84,8 +93,9 @@ useSeoMeta({
   twitterImage: `${configDataSet.value.seo.hostUrl}thumbnail.png?auto=format&fit=crop&frame=1&h=512&w=1024`,
   twitterCard: "summary_large_image",
 });
-
 </script>
-
-<style>
+<style scoped>
+.m-top {
+  margin-top: 8%;
+}
 </style>

@@ -1,12 +1,14 @@
 <template>
-  <v-container fluid>
-    <v-row v-if="Object.keys(props.eventInfo).length">
-      <v-col md="12 ">
+  <v-container fluid class="">
+    <v-row>
+      <v-col md="12">
         <v-img
           v-if="screenWidth > 600"
           src="/public/img/common/home-desktop.png"
           lazy-src="/public/img/common/home-desktop.png"
           rounded="xl"
+          style="background-color: #EEEEEE;height: 300px;"
+          contain
         ></v-img>
         <v-img
           v-else

@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="default">
-    <v-container fluid class="m-top">
+    <v-container fluid class="mt-5">
       <v-row>
         <v-col md="12">
           <h1>Agenda</h1>
@@ -95,7 +95,5 @@ useSeoMeta({
 });
 </script>
 <style scoped>
-.m-top {
-  margin-top: 8%;
-}
+
 </style>

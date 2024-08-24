@@ -57,7 +57,7 @@
               </p>
 
               <p
-                class="mt-10"
+                class="mt-5"
                 style="font-size: 22px; color: black; font-weight: 500"
               >
                 Overview

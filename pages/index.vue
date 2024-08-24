@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="default">
-    <v-container fluid class="m-top">
+    <v-container fluid >
       <!-- Hero -->
       <v-row>
         <HomeHeroSection :eventInfo="configData.eventInfo" :stats="stats" />
@@ -117,7 +117,4 @@ useSeoMeta({
 </script>
 
 <style scoped>
-.m-top {
-  margin-top: 10%;
-}
 </style>

@@ -11,10 +11,10 @@
             <v-col md="8" cols="12" class="pa-md-10">
               <h1>Last Year at DevFest</h1>
               <p class="mb-4">
-                {{ data.summery }}
+                {{ mainData.eventInfo.pastDevFest.summery }}
               </p>
 
-              <v-chip v-for="(item,index) in data.stats" :key="index" class="mr-1 mb-1"
+              <v-chip v-for="(item,index) in mainData.eventInfo.pastDevFest.stats" :key="index" class="mr-1 mb-1"
                 >{{ item.value }} {{item.name}}</v-chip
               >
             </v-col>
@@ -34,10 +34,8 @@
   </v-container>
 </template>
 
-<script>
-export default {
-  props:['data']
-};
+<script setup>
+const { mainData } = useJSONData();
 </script>
 
 <style>

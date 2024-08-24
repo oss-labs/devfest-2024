@@ -27,7 +27,7 @@
                     class="pa-3"
                     style="border: 1px solid black"
                   >
-                    <v-img :src="item.logo"></v-img>
+                    <v-img :src="item.logo" :lazy-src="item.logo"></v-img>
                   </v-avatar>
                 </a>
               </v-col>

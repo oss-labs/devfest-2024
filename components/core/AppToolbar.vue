@@ -8,7 +8,7 @@
   >
     <v-app-bar-title
       ><NuxtLink to="/" style="text-decoration: none; color: black">
-        DevFest {{ configData.communityLocation.city }}
+        DevFest {{ mainData.communityLocation.city }}
       </NuxtLink></v-app-bar-title
     >
     <v-spacer></v-spacer>
@@ -20,14 +20,15 @@
       <v-btn rounded size="small" to="/faq" class="mx-1">FAQ</v-btn>
     </div>
 
+    <ClientOnly>
     <v-btn
       rounded
       v-if="
-        configData &&
-        configData.eventInfo.registeration.link.length &&
-        new Date(configData.eventInfo.registeration.end_date) > new Date()
+        mainData &&
+        mainData.eventInfo.registeration.link.length &&
+        new Date(mainData.eventInfo.registeration.end_date) > new Date()
       "
-      :href="configData.eventInfo.registeration.link"
+      :href="mainData.eventInfo.registeration.link"
       class="d-md-flex d-lg-flex d-sm-flex d-none mr-3"
       :size="screenWidth < 400 ? 'x-small' : 'small'"
       target="_blank"
@@ -35,6 +36,7 @@
       variant="flat"
       >Register Now</v-btn
     >
+  </ClientOnly>
     <v-app-bar-nav-icon
       class="d-md-none d-lg-none d-sm-flex d-flex"
       @click="drawerAction"
@@ -44,14 +46,11 @@
 
 <script setup>
 import { useDisplay } from "vuetify";
-import configData from "/public/data/config.json";
+const { mainData } = useJSONData();
 const sidebar = useSideBar();
 const { width, mobile } = useDisplay();
 
 const screenWidth = ref(width);
-
-const configDataSet = ref([]);
-configDataSet.value = configData;
 
 const drawerAction = () => {
   sidebar.value = !sidebar.value;

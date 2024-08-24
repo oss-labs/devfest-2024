@@ -10,7 +10,7 @@
           through lightning talks, sessions, workshops, etc.
         </p>
       </v-col>
-      <v-col md="4" cols="12" v-for="(item, index) in data" :key="index">
+      <v-col md="4" cols="12" v-for="(item, index) in mainData.eventInfo.whatToExpect" :key="index">
         <div
           style="background-color: #eeeeee; border-radius: 20px"
           class="pa-8"
@@ -25,10 +25,8 @@
   </v-container>
 </template>
 
-<script>
-export default {
-  props:['data']
-}
+<script setup>
+const { mainData } = useJSONData();
 </script>
 
 <style>

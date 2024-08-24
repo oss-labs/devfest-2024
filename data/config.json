@@ -1,0 +1,90 @@
+{
+    "communityName": "GDG London",
+    "communityLocation": {
+      "country": "United Kingdom",
+      "city": "London"
+    },
+    "communityDescription": "GDG is an independent group; our activities and the opinions expressed here should in no way be linked to Google, the corporation.",
+    "communityLinks": {
+      "page": "https://gdg.community.dev/gdg-london/",
+      "website": "",
+      "instagram": "",
+      "linkedin": "https://www.linkedin.com/company/google-developers-london/",
+      "youtube": ""
+    },
+    "eventInfo": {
+      "name": "DevFest London 2024",
+      "date": "Nov 16, 2024",
+      "time": "9 AM - 5 PM IST",
+      "venue": {
+        "address": "London",
+        "map_link": "https://maps.app.goo.gl/Cm6gXgpugNw74ow6A"
+      },
+      "registeration": {
+        "link": "https://gdg.community.dev/",
+        "end_date": "2024-10-25"
+      },
+      "description": {
+        "short": "An annual event hosted by the Google Developers Group across the world to bring the technology closer to the developers. It is an all day developer conference where we aim to focus on multiple technologies through lightning talks, sessions, workshops, etc.",
+        "long": "An annual event hosted by the Google Developers Group across the world to bring the technology closer to the developers. It is an all day developer conference where we aim to focus on multiple technologies through lightning talks, sessions, workshops, etc.An annual event hosted by the Google Developers Group across the world to bring the technology closer to the developers. It is an all day developer conference where we aim to focus on multiple technologies through lightning talks, sessions, workshops, etc."
+      },
+      "stats": [
+        {
+          "name": "Speakers",
+          "value": "23+"
+        },
+        {
+          "name": "Participants",
+          "value": "200+"
+        },
+        {
+          "name": "Sessions",
+          "value": "10+"
+        },
+        {
+          "name": "Workshops",
+          "value": "2+"
+        }
+      ],
+      "whatToExpect": [
+        {
+          "title": "Technical content",
+          "description": "Events hosted by the Google Developer Groups community, featuring leading experts on Google technologies in areas."
+        },
+        {
+          "title": "Technical content",
+          "description": "Events hosted by the Google Developer Groups community, featuring leading experts on Google technologies in areas."
+        },
+        {
+          "title": "Technical content",
+          "description": "Events hosted by the Google Developer Groups community, featuring leading experts on Google technologies in areas."
+        }
+      ],
+      "pastDevFest": {
+        "summery": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente amet asperiores unde. Adipisci nobis ipsum fuga amet? Ut, iusto tenetur quisquam neque consectetur impedit magnam unde harum a mollitia possimus? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores laborum ut praesentium architecto a. Recusandae neque deserunt saepe mollitia quibusdam a nihil dicta in, totam hic molestias eaque. Dolores, nisi.",
+        "stats": [
+          {
+            "name": "Speakers",
+            "value": "23+"
+          },
+          {
+            "name": "Participants",
+            "value": "200+"
+          },
+          {
+            "name": "Sessions",
+            "value": "10+"
+          },
+          {
+            "name": "Workshops",
+            "value": "2+"
+          }
+        ]
+      }
+    },
+    "seo": {
+      "keywords": "GDG, DevFest, Google, DevFest",
+      "hostUrl": "https://devfest-app-2024.web.app"
+    }
+  }
+  

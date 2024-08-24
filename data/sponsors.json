@@ -1,0 +1,58 @@
+[
+  {
+      "category_name": "Title Sponsors",
+      "sponsors": [
+          {
+              "name":"Google For Developers",
+              "link": "https://developers.google.com",
+              "logo": "googlefordevelopers.png"   
+          },
+          {
+              "name":"Google For Developers",
+              "link": "https://developers.google.com",
+              "logo": "googlefordevelopers.png"   
+          },
+          {
+              "name":"Google For Developers",
+              "link": "https://developers.google.com",
+              "logo": "googlefordevelopers.png"   
+          },
+          {
+              "name":"Google For Developers",
+              "link": "https://developers.google.com",
+              "logo": "googlefordevelopers.png"   
+          }
+      ]
+  },
+  {
+      "category_name": "Venue Sponsors",
+      "sponsors": [
+          {
+              "name":"Google For Developers",
+              "link": "https://developers.google.com",
+              "logo": "googlefordevelopers.png"   
+          },
+          {
+              "name":"Google For Developers",
+              "link": "https://developers.google.com",
+              "logo": "googlefordevelopers.png"   
+          },
+          {
+              "name":"Google For Developers",
+              "link": "https://developers.google.com",
+              "logo": "googlefordevelopers.png"   
+          }
+      ]
+  },
+  {
+      "category_name": "Template Partner",
+      "sponsors": [
+          {
+              "name":"TechFerment",
+              "link": "https://techferment.com",
+              "logo": "techferment.png"   
+          }
+      ]
+  }
+
+]

@@ -1,6 +1,6 @@
 <template>
   <v-navigation-drawer v-model="sidebar" app floating temporary location="bottom">
-    <v-list-item class="py-4" :title="'DevFest '+ configDataSet.communityLocation.city" :subtitle="configDataSet.communityName"></v-list-item>
+    <v-list-item class="py-4" :title="'DevFest '+ mainData.communityLocation.city" :subtitle="mainData.communityName"></v-list-item>
     <v-divider></v-divider>
     <v-list-item link title="Home" to="/"></v-list-item>
     <v-list-item link title="Speakers" to="/speakers"></v-list-item>
@@ -12,10 +12,8 @@
 </template>
 
 <script setup>
-import configData from "/public/data/config.json";
+const { mainData } = useJSONData();
 const sidebar = useSideBar();
-const configDataSet = ref([]);
-configDataSet.value = configData;
 </script>
 
 <style>

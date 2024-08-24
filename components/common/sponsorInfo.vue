@@ -1,7 +1,7 @@
 <template>
   <v-container fluid class="pa-0 ma-0">
     <v-row
-      v-for="(item, index) in sponsorsInfo"
+      v-for="(item, index) in sponsorsData"
       :key="index"
       class="google-font mb-5 mt-0"
     >
@@ -20,30 +20,24 @@
           style="background-color: #eeeeee; border-radius: 15px"
           class="pa-5"
         >
-        <ClientOnly>
-          <v-tooltip location="bottom" :key="indexp">
-            <template v-slot:activator="{ props }">
-              <a :href="sponsor.link" target="_blank" v-bind="props">
-                <v-img :src="'/img/sponsors/' + sponsor.logo"></v-img>
-              </a>
-            </template>
-            <span>{{sponsor.name}}</span>
-          </v-tooltip>
-        </ClientOnly>
+          <ClientOnly>
+            <v-tooltip location="bottom" :key="indexp">
+              <template v-slot:activator="{ props }">
+                <a :href="sponsor.link" target="_blank" v-bind="props">
+                  <v-img :src="'/img/sponsors/' + sponsor.logo"></v-img>
+                </a>
+              </template>
+              <span>{{ sponsor.name }}</span>
+            </v-tooltip>
+          </ClientOnly>
         </div>
       </v-col>
     </v-row>
   </v-container>
 </template>
 
-<script>
-import sponsorsJSON from "/public/data/sponsors.json";
-export default {
-  name: "SponsorsData",
-  data: () => ({
-    sponsorsInfo: sponsorsJSON,
-  }),
-};
+<script setup>
+const { sponsorsData } = useJSONData();
 </script>
 
 <style>

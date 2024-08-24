@@ -1,301 +1,254 @@
 <template>
   <NuxtLayout name="default">
-    <v-container fluid class="mt-5 px-8">
-      <!-- Mobile -->
-      <v-row>
-        <v-col md="12" lg="12" class="d-block d-sm-block d-md-none px-0">
-          <h1>Badges</h1>
-          <p class="my-0 mb-8 h1-subheading google-font">
-            Upload an image and generate a personalised badge with the Google IO
-            Extended frame. Also share your image using #IOExtended on different
-            social platforms.
+    <v-container fluid class="mt-5 fill-height">
+      <v-row justify="center" align="center">
+        <v-col md="6" cols="12">
+          <h1>Badge</h1>
+          <p class="mt-2">
+            Upload an image and generate a personalized badge with the DevFest
+            frame.
           </p>
-        </v-col>
-      </v-row>
-      <!-- Mobile -->
 
-      <!-- Desktop -->
-      <v-row class="mb-md-15" justify="center" align="center">
-        <v-col md="7" class="order-md-1 order-sm-2 order-2 mt-3 px-0 mb-md-13">
-          <div class="d-none d-sm-none d-md-block mb-10">
-            <h1 class="mb-4">Badges</h1>
+          <p class="mt-8">Select an Image</p>
 
-            <p class="google-font">
-              Upload an image and generate a personalised badge with the Google
-              IO Extended frame. Also share your image using #IOExtended on
-              different social platforms.
-            </p>
-          </div>
-          <div class="input">
-            <label class="google-font mb-3" style="font-size: 110%"
-              >Select a Image</label
-            >
-            <br />
+          <v-btn
+            class="mt-4 mb-5"
+            size="large"
+            color="#4182F1"
+            @click="triggerFileUpload"
+            rounded
+            variant="flat"
+            style="text-transform: capitalize"
+          >
+            Upload Image
+            <v-icon>mdi-tray-arrow-up</v-icon>
+          </v-btn>
+          <input
+            ref="fileInput"
+            class="profile-input"
+            type="file"
+            accept="image/*"
+            @change="upload"
+            hidden
+          />
 
-            <v-btn
-              class="mt-4 mb-5"
-              size="large"
-              color="#4182F1"
-              @click="uploadImage()"
-              rounded
-              variant="flat"
-              style="text-transform: capitalize"
-            >
-              Upload Image
-              <v-icon>mdi-tray-arrow-up</v-icon>
-            </v-btn>
-            <input
-              class="profile-input"
-              type="file"
-              accept="image/*"
-              @change="upload"
-              hidden
-            />
-          </div>
           <div class="mt-5">
-            <label class="google-font mb-5" style="font-size: 110%"
-              >Image Shape</label
-            >
+            <label class="google-font mb-5" style="font-size: 110%">
+              Image Shape
+            </label>
             <br />
             <v-btn-toggle
               class="mt-3"
               rounded
               v-model="shapeData"
+              @click="changeShape(shapeData)"
               color="#eeeeee"
             >
-              <v-btn
-                value="original"
-                class="mx-0 px-5 pb-0"
-                @click="changeShape('original')"
-                >Orignal</v-btn
-              >
-              <v-btn
-                class="mx-0 pb-0 px-5"
-                value="Square"
-                @click="changeShape('Square')"
-                >Square</v-btn
-              >
-              <v-btn
-                class="mx-0 pb-0 px-5"
-                value="circle"
-                @click="changeShape('circle')"
-                >Circle</v-btn
-              >
+              <v-btn value="original" class="mx-0 px-5 pb-0">Original</v-btn>
+              <v-btn value="Square" class="mx-0 pb-0 px-5">Square</v-btn>
+              <v-btn value="circle" class="mx-0 pb-0 px-5">Circle</v-btn>
             </v-btn-toggle>
           </div>
-          <p class="mt-8 mb-15 mb-md-0">
-            <span
-              >*&nbsp; We respect your privacy and are not storing your pictures
-              on our servers.</span
-            >
+          <p class="mt-8 mb-md-0">
+            <span>
+              *&nbsp; We respect your privacy and are not storing your pictures
+              on our servers.
+            </span>
           </p>
         </v-col>
-        <v-col
-          md="5"
-          sm="12"
-          cols="12"
-          class="text-center py-md-10 py-5 order-md-2 order-sm-1 order-1"
-          style="background: #eeeeee; border-radius: 18px"
-        >
-          <canvas style="border-radius: 12px" class=""></canvas>
-          <v-btn
-            class="pb-0 mb-0 mt-2"
-            rounded
-            id="download"
-            @click="download()"
-            ><v-icon left>mdi-arrow-down-bold-circle-outline</v-icon
-            >Download</v-btn
+        <v-col md="6" cols="12" class="px-md-10">
+          <div
+            style="background: #eeeeee; border-radius: 18px"
+            class="text-center pa-5 pa-md-5"
           >
+            <canvas
+              ref="canvasRef"
+              style="width: 100%; border-radius: 12px"
+            ></canvas>
+            <v-btn
+              class="pb-0 mb-0 mt-2"
+              rounded
+              id="download"
+              @click="download"
+              v-show="downloadVisible"
+            >
+              <v-icon left>mdi-arrow-down-bold-circle-outline</v-icon>
+              Download
+            </v-btn>
+          </div>
         </v-col>
       </v-row>
-      <!-- Desktop -->
     </v-container>
   </NuxtLayout>
 </template>
-<script>
+
+<script setup>
+import { ref, onMounted } from "vue";
 import gdgImage from "/public/img/common/badge.png";
+const { mainData } = useJSONData();
+definePageMeta({
+  layout: false,
+});
 
-export default {
-  name: "BadgeComponent",
-  data: () => ({
-    downloadbtn: false,
-    canvas: null,
-    shape: "original",
-    image: "",
-    shapeData: "original",
-    ctx: null,
-    banner: null,
-  }),
-  methods: {
-    upload(e) {
-      if (e && e.target.files && e.target.files[0]) {
-        const reader = new FileReader();
-        reader.onload = (event) => {
-          const img = new Image();
-          img.onload = () => {
-            this.image = img;
-            this.draw();
-          };
-          img.onerror = (error) => {
-            console.error("Error loading image", error);
-          };
-          img.src = event.target.result;
-        };
-        reader.onerror = (error) => {
-          console.error("Error reading file", error);
-        };
-        reader.readAsDataURL(e.target.files[0]);
-      }
-    },
-    uploadImage() {
-      document.querySelector("input.profile-input").click();
-      this.downloadbtn = true;
-      document.getElementById("download").style.visibility = "visible";
-    },
-    changeShape(type) {
-      this.shape = type;
-      this.draw();
-    },
-    draw() {
-      if (!this.canvas || !this.ctx) {
-        return;
-      }
+const canvasRef = ref(null);
+const fileInput = ref(null);
+const shapeData = ref("original");
+const downloadVisible = ref(false);
+const image = ref(null);
+const banner = ref(null);
+const ctx = ref(null);
 
-      this.canvas.width = 2500;
-      this.canvas.height = 2500;
+onMounted(() => {
+  initializeCanvas();
+});
 
-      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-      if (this.image) {
-        switch (this.shape) {
-          case "original": {
-            this.canvas.width = this.image.width;
-            this.canvas.height = this.image.height;
-            this.ctx.drawImage(this.image, 0, 0);
-            break;
-          }
-          default: {
-            this.canvas.width = 2500;
-            this.canvas.height = 2500;
-            const hRatio = this.canvas.width / this.image.width;
-            const vRatio = this.canvas.height / this.image.height;
-            const ratio = Math.max(hRatio, vRatio);
-            const x = (this.canvas.width - this.image.width * ratio) / 2;
-            const y = (this.canvas.height - this.image.height * ratio) / 2;
+const initializeCanvas = () => {
+  canvasRef.value = canvasRef.value || document.createElement("canvas");
+  ctx.value = canvasRef.value.getContext("2d");
 
-            this.ctx.drawImage(
-              this.image,
-              0,
-              0,
-              this.image.width,
-              this.image.height,
-              x,
-              y,
-              this.image.width * ratio,
-              this.image.height * ratio
-            );
-            break;
-          }
-        }
-      } else {
-        this.ctx.fillStyle = "#fff";
-        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-      }
-      const height =
-        (this.banner.height / this.banner.width) * this.canvas.width;
-      const y = this.canvas.height - height;
-      const fontSize = this.canvas.width / 17.2;
-
-      this.ctx.drawImage(
-        this.banner,
-        0,
-        0,
-        this.banner.width,
-        this.banner.height,
-        0,
-        y,
-        this.canvas.width,
-        height
-      );
-      this.ctx.fillStyle = "#757575";
-      this.ctx.textAlign = "center";
-      this.ctx.textBaseline = "middle";
-      this.ctx.font = `${fontSize}px Google Sans, sans-serif`;
-      // ctx.fillText(category, canvas.width / 2, fontY)
-      if (this.shape === "circle") {
-        this.ctx.globalCompositeOperation = "destination-in";
-        this.ctx.beginPath();
-        this.ctx.arc(
-          this.canvas.width / 2,
-          this.canvas.height / 2,
-          this.canvas.height / 2,
-          0,
-          Math.PI * 2
-        );
-        this.ctx.closePath();
-        this.ctx.fill();
-      }
-    },
-    download() {
-      const a = document.createElement("a");
-      const url = this.canvas.toDataURL("image/png;base64");
-      a.download = "#IOExtended_badge.png";
-      a.href = url;
-      a.click();
-    },
-  },
-  mounted() {
-    this.canvas = document.querySelector("canvas");
-    this.ctx = this.canvas.getContext("2d");
-    this.image = "";
-    this.shape = "original";
-    this.downloadbtn = false;
-    document.getElementById("download").style.visibility = "hidden";
-    this.banner = new Image();
-    this.banner.src = gdgImage;
-    this.banner.onload = () => {
-      this.draw();
-    };
-    this.banner.onerror = (error) => {};
-  },
-  setup() {
-    const { mainData } = useJSONData();
-    definePageMeta({
-      layout: false,
-    });
-
-    useSeoMeta({
-      contentType: "text/html; charset=utf-8",
-      title:
-        "Badge - " +
-        mainData.eventInfo.name +
-        " | " +
-        mainData.communityName,
-      description: mainData.eventInfo.description.short,
-      keywords: mainData.seo.keywords,
-      author: "OSS Labs",
-      creator: "OSS Labs",
-      viewport: "width=device-width, initial-scale=1.0",
-      ogTitle:
-        "Badge - " +
-        mainData.eventInfo.name +
-        " | " +
-        mainData.communityName,
-      ogDescription: mainData.eventInfo.description.short,
-      ogImage: `${mainData.seo.hostUrl}/thumbnail.png?auto=format&fit=crop&frame=1&h=512&w=1024`,
-      ogUrl: mainData.seo.hostUrl,
-      ogType: "website",
-      twitterTitle:
-        "Badge - " +
-        mainData.eventInfo.name +
-        " | " +
-        mainData.communityName,
-      twitterDescription: mainData.eventInfo.description.short,
-      twitterImage: `${mainData.seo.hostUrl}thumbnail.png?auto=format&fit=crop&frame=1&h=512&w=1024`,
-      twitterCard: "summary_large_image",
-    });
-  },
+  banner.value = new Image();
+  banner.value.src = gdgImage;
+  banner.value.onload = () => {
+    draw();
+  };
 };
+
+const upload = (e) => {
+  if (e && e.target.files && e.target.files[0]) {
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      image.value = new Image();
+      image.value.onload = draw;
+      image.value.src = event.target.result;
+    };
+    reader.readAsDataURL(e.target.files[0]);
+  }
+};
+
+const triggerFileUpload = () => {
+  fileInput.value.click();
+  downloadVisible.value = true;
+};
+
+const draw = () => {
+  if (!canvasRef.value || !ctx.value) {
+    return;
+  }
+  canvasRef.value.width = 2500;
+  canvasRef.value.height = 2500;
+
+  ctx.value.clearRect(0, 0, canvasRef.value.width, canvasRef.value.height);
+
+  if (image.value) {
+    drawImage();
+  } else {
+    ctx.value.fillStyle = "#fff";
+    ctx.value.fillRect(0, 0, canvasRef.value.width, canvasRef.value.height);
+  }
+
+  drawBanner();
+  applyShape();
+};
+
+const drawImage = () => {
+  switch (shapeData.value) {
+    case "original":
+      canvasRef.value.width = image.value.width;
+      canvasRef.value.height = image.value.height;
+      ctx.value.drawImage(image.value, 0, 0);
+      break;
+    default:
+      canvasRef.value.width = 2500;
+      canvasRef.value.height = 2500;
+      const hRatio = canvasRef.value.width / image.value.width;
+      const vRatio = canvasRef.value.height / image.value.height;
+      const ratio = Math.max(hRatio, vRatio);
+      const x = (canvasRef.value.width - image.value.width * ratio) / 2;
+      const y = (canvasRef.value.height - image.value.height * ratio) / 2;
+
+      ctx.value.drawImage(
+        image.value,
+        0,
+        0,
+        image.value.width,
+        image.value.height,
+        x,
+        y,
+        image.value.width * ratio,
+        image.value.height * ratio
+      );
+      break;
+  }
+};
+
+const drawBanner = () => {
+  const height =
+    (banner.value.height / banner.value.width) * canvasRef.value.width;
+  const y = canvasRef.value.height - height;
+  ctx.value.drawImage(
+    banner.value,
+    0,
+    0,
+    banner.value.width,
+    banner.value.height,
+    0,
+    y,
+    canvasRef.value.width,
+    height
+  );
+};
+
+const applyShape = () => {
+  if (shapeData.value === "circle") {
+    ctx.value.globalCompositeOperation = "destination-in";
+    ctx.value.beginPath();
+    ctx.value.arc(
+      canvasRef.value.width / 2,
+      canvasRef.value.height / 2,
+      canvasRef.value.height / 2,
+      0,
+      Math.PI * 2
+    );
+    ctx.value.closePath();
+    ctx.value.fill();
+  }
+};
+
+const changeShape = (type) => {
+  shapeData.value = type;
+  draw();
+};
+
+const download = () => {
+  const a = document.createElement("a");
+  const url = canvasRef.value.toDataURL("image/png;base64");
+  a.download = "badge.png";
+  a.href = url;
+  a.click();
+};
+
+useSeoMeta({
+  contentType: "text/html; charset=utf-8",
+  title: "Badge - " + mainData.eventInfo.name + " | " + mainData.communityName,
+  description: mainData.eventInfo.description.short,
+  keywords: mainData.seo.keywords,
+  author: "OSS Labs",
+  creator: "OSS Labs",
+  viewport: "width=device-width, initial-scale=1.0",
+  ogTitle:
+    "Badge - " + mainData.eventInfo.name + " | " + mainData.communityName,
+  ogDescription: mainData.eventInfo.description.short,
+  ogImage: `${mainData.seo.hostUrl}/thumbnail.png?auto=format&fit=crop&frame=1&h=512&w=1024`,
+  ogUrl: mainData.seo.hostUrl,
+  ogType: "website",
+  twitterTitle:
+    "Badge - " + mainData.eventInfo.name + " | " + mainData.communityName,
+  twitterDescription: mainData.eventInfo.description.short,
+  twitterImage: `${mainData.seo.hostUrl}thumbnail.png?auto=format&fit=crop&frame=1&h=512&w=1024`,
+  twitterCard: "summary_large_image",
+});
 </script>
+
 <style scoped>
 .v-btn-group {
   border: 1px solid #757575;
@@ -306,7 +259,6 @@ canvas {
   width: 1500px;
   max-width: 80%;
 }
-
 @media screen and (max-width: 860px) {
 }
 </style>

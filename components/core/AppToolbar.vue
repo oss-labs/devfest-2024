@@ -13,30 +13,35 @@
     >
     <v-spacer></v-spacer>
     <div class="mx-4 d-none d-sm-none d-md-flex d-lg-flex">
-      <v-btn rounded size="small" to="/speakers" class="mx-1">Speakers</v-btn>
-      <v-btn rounded size="small" to="/agenda" class="mx-1">Agenda</v-btn>
-      <v-btn rounded size="small" to="/badge" class="mx-1">Badge</v-btn>
-      <v-btn rounded size="small" to="/team" class="mx-1">Team</v-btn>
-      <v-btn rounded size="small" to="/faq" class="mx-1">FAQ</v-btn>
+      <v-btn
+        rounded
+        size="small"
+        style="text-transform: capitalize"
+        :to="item.path"
+        class="mx-1"
+        v-for="(item, index) in navbarData"
+        :key="index"
+        >{{ item.name }}</v-btn
+      >
     </div>
 
     <ClientOnly>
-    <v-btn
-      rounded
-      v-if="
-        mainData &&
-        mainData.eventInfo.registeration.link.length &&
-        new Date(mainData.eventInfo.registeration.end_date) > new Date()
-      "
-      :href="mainData.eventInfo.registeration.link"
-      class="d-md-flex d-lg-flex d-sm-flex d-none mr-3"
-      :size="screenWidth < 400 ? 'x-small' : 'small'"
-      target="_blank"
-      color="#4182F1"
-      variant="flat"
-      >Register Now</v-btn
-    >
-  </ClientOnly>
+      <v-btn
+        rounded
+        v-if="
+          mainData &&
+          mainData.eventInfo.registeration.link.length &&
+          new Date(mainData.eventInfo.registeration.end_date) > new Date()
+        "
+        :href="mainData.eventInfo.registeration.link"
+        class="d-md-flex d-lg-flex d-sm-flex d-none mr-3"
+        :size="screenWidth < 400 ? 'x-small' : 'small'"
+        target="_blank"
+        color="#4182F1"
+        variant="flat"
+        >Register Now</v-btn
+      >
+    </ClientOnly>
     <v-app-bar-nav-icon
       class="d-md-none d-lg-none d-sm-flex d-flex"
       @click="drawerAction"
@@ -46,7 +51,7 @@
 
 <script setup>
 import { useDisplay } from "vuetify";
-const { mainData } = useJSONData();
+const { mainData, navbarData } = useJSONData();
 const sidebar = useSideBar();
 const { width, mobile } = useDisplay();
 

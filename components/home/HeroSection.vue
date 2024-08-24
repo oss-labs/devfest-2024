@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="">
+  <v-container fluid class="gradient-circle">
     <v-row>
       <v-col md="12">
         <ClientOnly>
@@ -8,7 +8,7 @@
             src="/public/img/common/home-desktop.png"
             lazy-src="/public/img/common/home-desktop.png"
             rounded="xl"
-            style="background-color: #eeeeee; height: 300px"
+            style="background-color: #eeeeee;"
             contain
           ></v-img>
           <v-img

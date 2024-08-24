@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Home",
+    "path": "/",
+    "visible": true
+  },
+  {
+    "name": "Agenda",
+    "path": "/agenda",
+    "visible": true
+  },
+  {
+    "name": "Speakers",
+    "path": "/speakers",
+    "visible": true
+  },
+  {
+    "name": "Badge",
+    "path": "/badge",
+    "visible": true
+  },
+  {
+    "name": "Team",
+    "path": "/team",
+    "visible": true
+  },
+  {
+    "name": "FAQ",
+    "path": "/faq",
+    "visible": true
+  }
+]

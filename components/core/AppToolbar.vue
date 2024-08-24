@@ -38,6 +38,7 @@
         :size="screenWidth < 400 ? 'x-small' : 'small'"
         target="_blank"
         color="#4182F1"
+        style="border: 1.5px solid #1e1e1e; color: black;text-transform: capitalize;font-weight: 100;"
         variant="flat"
         >Register Now</v-btn
       >
@@ -86,7 +87,7 @@ const drawerAction = () => {
 /* Tablet and larger screens */
 @media (min-width: 700px) {
   .toolbar-class {
-    max-width: 1024px !important;
+    max-width: 1000px !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }

@@ -18,7 +18,7 @@
             @click="triggerFileUpload"
             rounded
             variant="flat"
-            style="text-transform: capitalize"
+            style="border: 1.5px solid #1e1e1e; color: black;text-transform: capitalize"
           >
             Upload Image
             <v-icon>mdi-tray-arrow-up</v-icon>
@@ -40,6 +40,7 @@
             <v-btn-toggle
               class="mt-3"
               rounded
+              style="border: 1.5px solid #1e1e1e; color: black;text-transform: capitalize"
               v-model="shapeData"
               @click="changeShape(shapeData)"
               color="#eeeeee"

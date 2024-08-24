@@ -11,6 +11,7 @@
           </p>
         </v-col>
       </v-row>
+      <ClientOnly>
       <v-row class="mb-7">
         <v-col>
           <v-toolbar flat class="px-0" style="border-radius: 15px">
@@ -43,6 +44,7 @@
           </v-tabs-items>
         </v-col>
       </v-row>
+    </ClientOnly>
     </v-container>
   </NuxtLayout>
 </template>

@@ -1,10 +1,10 @@
 <template>
   <NuxtLayout name="default">
-    <v-container fluid class="mt-5">
+    <v-container fluid class="mt-5 px-8">
       <!-- Mobile -->
       <v-row>
         <v-col md="12" lg="12" class="d-block d-sm-block d-md-none px-0">
-          <p class="text-h3 mb-4">Badges</p>
+          <h1>Badges</h1>
           <p class="my-0 mb-8 h1-subheading google-font">
             Upload an image and generate a personalised badge with the Google IO
             Extended frame. Also share your image using #IOExtended on different

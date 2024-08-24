@@ -1,16 +1,15 @@
 <template>
   <NuxtLayout name="default">
-    <v-container fluid >
+    <v-container fluid v-if="Object.keys(configData).length">
       <!-- Hero -->
       <v-row>
-        <HomeHeroSection :eventInfo="configData.eventInfo" :stats="stats" />
+          <HomeHeroSection :eventInfo="configData.eventInfo" :stats="stats" />
       </v-row>
       <!-- Hero -->
 
       <!-- Whats New -->
       <v-row>
-        <!-- <HomeMoveSection /> -->
-        <HomeExpectionSection :data="whatToExpect" />
+          <HomeExpectionSection :data="whatToExpect" />
       </v-row>
       <!-- Whats New -->
 

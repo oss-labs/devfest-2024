@@ -2,20 +2,22 @@
   <v-container fluid class="">
     <v-row>
       <v-col md="12">
-        <v-img
-          v-if="screenWidth > 600"
-          src="/public/img/common/home-desktop.png"
-          lazy-src="/public/img/common/home-desktop.png"
-          rounded="xl"
-          style="background-color: #EEEEEE;height: 300px;"
-          contain
-        ></v-img>
-        <v-img
-          v-else
-          src="/public/img/common/home-mobile.png"
-          lazy-src="/public/img/common/home-mobile.png"
-          rounded="xl"
-        ></v-img>
+        <ClientOnly>
+          <v-img
+            v-if="screenWidth > 600"
+            src="/public/img/common/home-desktop.png"
+            lazy-src="/public/img/common/home-desktop.png"
+            rounded="xl"
+            style="background-color: #eeeeee; height: 300px"
+            contain
+          ></v-img>
+          <v-img
+            v-else
+            src="/public/img/common/home-mobile.png"
+            lazy-src="/public/img/common/home-mobile.png"
+            rounded="xl"
+          ></v-img>
+        </ClientOnly>
       </v-col>
 
       <v-col class="text-center" cols="12">
@@ -32,19 +34,10 @@
           conference
         </h1>
 
-        <!-- <h1
-          class="my-4"
-          :style="{
-            fontSize: screenWidth > 600px ? '450%' : '200%',
-            lineHeight: '100%',
-          }"
-        >
-          The city's most beloved tech <br />
-          conference
-        </h1> -->
         <p class="" :style="{ maxWidth: '90%' }">
           {{ props.eventInfo.description.short }}
         </p>
+
         <v-btn
           rounded
           size="large"

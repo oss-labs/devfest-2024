@@ -13,16 +13,17 @@
     >
     <v-spacer></v-spacer>
     <div class="mx-4 d-none d-sm-none d-md-flex d-lg-flex">
-      <v-btn
-        rounded
-        size="small"
-        style="text-transform: capitalize"
-        :to="item.path"
-        class="mx-1"
-        v-for="(item, index) in navbarData"
-        :key="index"
-        >{{ item.name }}</v-btn
-      >
+      <template v-for="(item, index) in navbarData" :key="index">
+        <v-btn
+          rounded
+          size="small"
+          style="text-transform: capitalize"
+          :to="item.path"
+          class="mx-1"
+          v-if="item.visible"
+          >{{ item.name }}</v-btn
+        >
+      </template>
     </div>
 
     <ClientOnly>
@@ -38,7 +39,12 @@
         :size="screenWidth < 400 ? 'x-small' : 'small'"
         target="_blank"
         color="#4182F1"
-        style="border: 1.5px solid #1e1e1e; color: black;text-transform: capitalize;font-weight: 100;"
+        style="
+          border: 1.5px solid #1e1e1e;
+          color: black;
+          text-transform: capitalize;
+          font-weight: 100;
+        "
         variant="flat"
         >Register Now</v-btn
       >

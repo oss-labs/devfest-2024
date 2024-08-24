@@ -7,9 +7,9 @@
         class="py-3 ma-1 fill-height"
         v-bind="activatorProps"
       >
-        <!-- {{ data }} -->
+        {{ props.data }}
 
-        <p class="mb-0 h1-subheading google-font">{{ data.title }}</p>
+        <p class="mb-0 h1-subheading google-font">{{ props.data.title }}</p>
 
         <span v-for="(itemp, indexp) in speakers" :key="indexp">
           <v-chip pill class="mt-2 mr-2">
@@ -21,19 +21,19 @@
         </span>
 
         <v-chip v-if="data.track" small class="mt-2">{{
-          data.track
+          props.data.track
         }}</v-chip>
       </div>
     </template>
 
     <v-card class="pa-0 white" v-if="dialog" style="border-radius: 12px">
       <iframe
-        v-if="data.link"
+        v-if="props.data.link"
         class="ma-0 pa-0"
         width="100%"
         height="455"
         style="border: none"
-        :src="data.link"
+        :src="props.data.link"
       >
       </iframe>
       <v-card-text class="px-2 google-font mt-n0">
@@ -44,20 +44,20 @@
                 class="my-2"
                 style="text-align: left;font-size:25px;font-weight:500;color:black'line-height:15px"
               >
-                {{ data.title }} Details
+                {{ props.data.title }} Details
               </p>
               <p style="font-size: 100%">
                 <!-- <span class="mr-3">{{item.timeDuration}} Min</span> -->
-                <span v-if="data.date.length" class="mr-3"
+                <span v-if="props.data.date.length" class="mr-3"
                   ><v-icon small>mdi-calendar-month</v-icon>
-                  {{ data.date }}</span
+                  {{ props.data.date }}</span
                 >
-                <span v-if="data.time.length" class="mr-3"
+                <span v-if="props.data.time.length" class="mr-3"
                   ><v-icon small>mdi-clock-outline</v-icon>
-                  {{ data.time }}</span
+                  {{ props.data.time }}</span
                 >
 
-                <span>{{ data.timeDuration }} Min</span>
+                <span>{{ props.data.timeDuration }} Min</span>
               </p>
 
               <p
@@ -67,17 +67,17 @@
                 Overview
               </p>
               <p style="font-size: 95%; color: black; opacity: 0.9">
-                {{ data.description }}
+                {{ props.data.description }}
               </p>
 
-              <!-- <v-chip small pill>{{ data.format }}</v-chip> -->
-              <v-chip v-if="data.track" small class="mt-2">{{
-                data.track
+              <!-- <v-chip small pill>{{ props.data.format }}</v-chip> -->
+              <v-chip v-if="props.data.track" small class="mt-2">{{
+                props.data.track
               }}</v-chip>
 
               <v-chip
-                v-if="data.slide"
-                :href="data.slide"
+                v-if="props.data.slide"
+                :href="props.data.slide"
                 color="indigo"
                 outlined
                 target="_blank"
@@ -112,62 +112,62 @@
 </template>
 
 <script setup>
-// const { speakersData } = useJSONData();
+const { speakersData } = useJSONData();
 
-// let dialog = ref(false);
-// let speakers = ref([]);
+let dialog = ref(false);
+let speakers = ref([]);
 
-// const props = defineProps({
-//   data: {
-//     type: Array,
-//     default: [],
-//   },
-// });
+const props = defineProps({
+  data: {
+    type: Array,
+    default: [],
+  },
+});
 
-// console.log(data.values, "asdsd");
+console.log(props.data.values, "asdsd");
 
-// onMounted(() => {
-//   speakers.value = speakersData.filter((obj) =>
-//     data.values.speakers.find((x) => x.toString() === obj.id)
-//   );
-// });
+onMounted(() => {
+  speakers.value = speakersData.filter((obj) =>
+    props.data.values.speakers.find((x) => x.toString() === obj.id)
+  );
+});
 
-// const getImgUrl = (pic, defaultimage = "avatar.png") => {
-//   if (pic.length > 0) {
-//     return "/img/speakers/" + pic;
-//   } else {
-//     return "/img/common/" + defaultimage;
-//   }
-// };
+const getImgUrl = (pic, defaultimage = "avatar.png") => {
+  if (pic.length > 0) {
+    return "/img/speakers/" + pic;
+  } else {
+    return "/img/common/" + defaultimage;
+  }
+};
 </script>
 
 <script>
-import speakersJSON from "/public/data/speakers.json";
+// import speakersJSON from "/public/data/speakers.json";
 export default {
-  props: ["data"],
-  data() {
-    return {
-      dialog: false,
-      speakersInfo: speakersJSON,
-      speakers: [],
-    };
-  },
-  mounted() {
-    this.speakers = [];
-    this.speakers = this.speakersInfo.filter((obj) =>
-      this.data.speakers.find((x) => x.toString() === obj.id)
-    );
-  },
-  methods: {
-    getImgUrl(pic, defaultimage = "avatar.png") {
-      console.log("getImgUrl", pic);
-      if (pic.length > 0) {
-        return "/img/speakers/" + pic;
-      } else {
-        return "/img/common/" + defaultimage;
-      }
-    },
-  },
+  // props: ["data"],
+  // data() {
+  //   return {
+  //     dialog: false,
+  //     speakersInfo: speakersJSON,
+  //     speakers: [],
+  //   };
+  // },
+  // mounted() {
+  //   this.speakers = [];
+  //   this.speakers = this.speakersInfo.filter((obj) =>
+  //     this.data.speakers.find((x) => x.toString() === obj.id)
+  //   );
+  // },
+  // methods: {
+  //   getImgUrl(pic, defaultimage = "avatar.png") {
+  //     console.log("getImgUrl", pic);
+  //     if (pic.length > 0) {
+  //       return "/img/speakers/" + pic;
+  //     } else {
+  //       return "/img/common/" + defaultimage;
+  //     }
+  //   },
+  // },
 };
 </script>
     <style scoped>

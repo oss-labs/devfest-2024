@@ -5,10 +5,10 @@
         <v-col md="12">
           <h1>Speakers</h1>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti,
-            sapiente est architecto autem minus explicabo reiciendis voluptatem
-            porro rerum optio quidem quaerat animi eveniet magnam, pariatur non
-            delectus velit perferendis!
+            Our speakers are influential leaders and allies actively involved in
+            various communities within their organizations, cities, countries,
+            and beyond, making a significant impact through their contributions
+            and support.
           </p>
         </v-col>
       </v-row>
@@ -27,14 +27,7 @@
 </template>
 
 <script setup>
-import speakersJSON from "/public/data/speakers.json";
-import configData from "/public/data/config.json";
-
-const configDataSet = ref([]);
-configDataSet.value = configData;
-
-let speakersData = ref([]);
-speakersData.value = speakersJSON;
+const { mainData, speakersData } = useJSONData();
 
 definePageMeta({
   layout: false,
@@ -43,35 +36,25 @@ definePageMeta({
 useSeoMeta({
   contentType: "text/html; charset=utf-8",
   title:
-    "Speakers - " +
-    configDataSet.value.eventInfo.name +
-    " | " +
-    configDataSet.value.communityName,
-  description: configDataSet.value.eventInfo.description.short,
-  keywords: configDataSet.value.seo.keywords,
+    "Speakers - " + mainData.eventInfo.name + " | " + mainData.communityName,
+  description: mainData.eventInfo.description.short,
+  keywords: mainData.seo.keywords,
   author: "OSS Labs",
   creator: "OSS Labs",
   viewport: "width=device-width, initial-scale=1.0",
   ogTitle:
-    "Speakers - " +
-    configDataSet.value.eventInfo.name +
-    " | " +
-    configDataSet.value.communityName,
-  ogDescription: configDataSet.value.eventInfo.description.short,
-  ogImage: `${configDataSet.value.seo.hostUrl}/thumbnail.png?auto=format&fit=crop&frame=1&h=512&w=1024`,
-  ogUrl: configDataSet.value.seo.hostUrl,
+    "Speakers - " + mainData.eventInfo.name + " | " + mainData.communityName,
+  ogDescription: mainData.eventInfo.description.short,
+  ogImage: `${mainData.seo.hostUrl}/thumbnail.png?auto=format&fit=crop&frame=1&h=512&w=1024`,
+  ogUrl: mainData.seo.hostUrl,
   ogType: "website",
   twitterTitle:
-    "Speakers - " +
-    configDataSet.value.eventInfo.name +
-    " | " +
-    configDataSet.value.communityName,
-  twitterDescription: configDataSet.value.eventInfo.description.short,
-  twitterImage: `${configDataSet.value.seo.hostUrl}thumbnail.png?auto=format&fit=crop&frame=1&h=512&w=1024`,
+    "Speakers - " + mainData.eventInfo.name + " | " + mainData.communityName,
+  twitterDescription: mainData.eventInfo.description.short,
+  twitterImage: `${mainData.seo.hostUrl}thumbnail.png?auto=format&fit=crop&frame=1&h=512&w=1024`,
   twitterCard: "summary_large_image",
 });
 </script>
 
 <style scoped>
-
 </style>

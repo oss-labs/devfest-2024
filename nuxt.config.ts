@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   build: {
     transpile: ["vuetify"],
   },
+  css: ['~/assets/main.css'],
   modules: [
     (_options, nuxt) => {
       nuxt.hooks.hook("vite:extendConfig", (config) => {
@@ -13,7 +14,7 @@ export default defineNuxtConfig({
         config.plugins.push(vuetify({ autoImport: true }));
       });
     },
-    //...
+    '@vite-pwa/nuxt'
   ],
   vite: {
     vue: {
@@ -22,4 +23,7 @@ export default defineNuxtConfig({
       },
     },
   },
+  pwa: {
+    
+  }
 });

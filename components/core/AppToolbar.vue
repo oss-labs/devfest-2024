@@ -6,6 +6,10 @@
     rounded="xl"
     color="#eeeeee"
   >
+  <v-app-bar-nav-icon
+      class="d-md-none d-lg-none d-sm-flex d-flex"
+      @click="drawerAction"
+    ></v-app-bar-nav-icon>
     <NuxtLink to="/" class="px-2" style="text-decoration: none; color: black">
       <div class="d-flex">
         <v-img
@@ -17,6 +21,7 @@
           style="display: inline; background-color: white"
           variant="outlined"
           color="black"
+          size="small"
           class="align-center pt-1"
           >{{ mainData.communityLocation.city }}</v-chip
         >
@@ -60,10 +65,7 @@
         >Register Now</v-btn
       >
     </ClientOnly>
-    <v-app-bar-nav-icon
-      class="d-md-none d-lg-none d-sm-flex d-flex"
-      @click="drawerAction"
-    ></v-app-bar-nav-icon>
+    
   </v-app-bar>
 </template>
 

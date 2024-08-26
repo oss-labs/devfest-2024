@@ -19,7 +19,7 @@
         <!-- Technologies -->
 
         <!-- Past DevFest -->
-        <HomePastDevFest />
+        <HomePastDevFest class="mb-md-10" />
         <!-- Past DevFest -->
 
         <!-- Sponsors -->

@@ -1,34 +1,79 @@
 <template>
   <v-container fluid>
-    <v-row>
-      <v-col md="12" cols="12" class="">
-        <v-container
-          fluid
-          style="background-color: #1c1d1d; border-radius: 20px"
-          class="text-white"
-        >
-          <v-row class="pa-0 ma-0" justify="center" align="center">
-            <v-col md="8" cols="12" class="pa-md-10">
-              <h1>Last Year at DevFest</h1>
-              <p class="mb-4">
-                {{ mainData.eventInfo.pastDevFest.summery }}
-              </p>
-
-              <v-chip v-for="(item,index) in mainData.eventInfo.pastDevFest.stats" :key="index" class="mr-1 mb-1"
-                >{{ item.value }} {{item.name}}</v-chip
+    <v-row class="mb-0">
+      <v-col md="12" sm="12" cols="12" class="text-center">
+        <h1>Last Year at DevFest</h1>
+        <p>
+          {{ mainData.eventInfo.pastDevFest.summery }}
+        </p>
+        <v-img
+          style="max-height: 300px; border: 1.5px solid black"
+          rounded="xl"
+          cover
+          class="mt-6"
+          src="/img/common/past-devfest.jpg"
+        ></v-img>
+      </v-col>
+      <v-col md="12" sm="12" cols="12">
+        <v-container fluid class="px-0">
+          <v-row>
+            <v-col
+              md="3"
+              v-for="(item, index) in mainData.eventInfo.pastDevFest.stats"
+              :key="index"
+              cols="6"
+            >
+              <div
+                class="text-center py-3"
+                :style="{
+                  backgroundColor: `${colors[index]}`,
+                  borderTopLeftRadius: index == 0 ? '23px' : '',
+                  borderBottomLeftRadius: index == 0 ? '23px' : '',
+                  borderTopRightRadius:
+                    index == mainData.eventInfo.pastDevFest.stats.length - 1
+                      ? '23px'
+                      : '',
+                  borderBottomRightRadius:
+                    index == mainData.eventInfo.pastDevFest.stats.length - 1
+                      ? '23px'
+                      : '',
+                }"
               >
-            </v-col>
-            <v-col md="4" class="pa-0">
-              <v-img
-                gradient="to right, rgba(28,29,29,1), rgba(0,0,0,.1)"
-                src="/img/common/past-devfest.jpg"
-                rounded="lg"
-                class="justify-end"
-              >
-              </v-img>
+                <h1>{{ item.value }}</h1>
+                <p>{{ item.name }}</p>
+              </div>
             </v-col>
           </v-row>
         </v-container>
+      </v-col>
+    </v-row>
+    <v-row class="my-0">
+      <v-col md="3" sm="3">
+        <v-img
+          height="250"
+          rounded="xl"
+          cover
+          src="/img/common/past-devfest.jpg"
+          style="border: 1.5px solid black"
+        ></v-img>
+      </v-col>
+      <v-col md="6" sm="6">
+        <v-img
+          rounded="xl"
+          height="250"
+          cover
+          style="border: 1.5px solid black"
+          src="/assets/img/devfest-elements.svg"
+        ></v-img>
+      </v-col>
+      <v-col md="3" sm="3">
+        <v-img
+          height="250"
+          rounded="xl"
+          cover
+          src="/img/common/past-devfest.jpg"
+          style="border: 1.5px solid black"
+        ></v-img>
       </v-col>
     </v-row>
   </v-container>
@@ -36,7 +81,7 @@
 
 <script setup>
 const { mainData } = useJSONData();
+
+const colors = ref(["#C3ECF6", "#F8D8D8", "#FFE7A5", "#CCF6C5"]);
 </script>
 
-<style>
-</style>

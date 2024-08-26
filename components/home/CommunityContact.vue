@@ -11,7 +11,7 @@
           "
         >
           <v-row justify="center" align="center" class="pa-5">
-            <v-col md="5" sm="6">
+            <v-col md="5" sm="6" cols="12">
               <h1 style="line-height: normal;">
                 Keep in touch with {{ mainData.communityName }} for the latest
                 announcements
@@ -26,7 +26,7 @@
               />
             </v-col>
             <v-col md="4" sm="1"></v-col>
-            <v-col md="3" sm="5">
+            <v-col md="3" sm="5" cols="12">
               <v-img src="/assets/img/gdg-logo.svg"></v-img>
             </v-col>
           </v-row>

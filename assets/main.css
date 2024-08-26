@@ -7,3 +7,13 @@
 .google-font {
   font-family: "google-sans", Helvetica, Arial, Sans-Serif;
 }
+
+.footer-icons {
+  float: right;
+}
+
+@media (max-width: 960px) {
+  .footer-icons {
+    float: none;
+  }
+}

@@ -6,11 +6,14 @@
     rounded="xl"
     color="#eeeeee"
   >
-    <v-app-bar-title
-      ><NuxtLink to="/" style="text-decoration: none; color: black">
-        DevFest {{ mainData.communityLocation.city }}
-      </NuxtLink></v-app-bar-title
-    >
+    <NuxtLink to="/" class="px-2" style="text-decoration: none; color: black">
+      <div>
+        <v-img width="120" src="/assets/img/devfest-logo.svg"></v-img>
+        <v-chip style="display: inline;background-color: white;" variant="outlined" color="black">{{ mainData.communityLocation.city }}</v-chip>
+      </div>
+    </NuxtLink>
+
+
     <v-spacer></v-spacer>
     <div class="mx-4 d-none d-sm-none d-md-flex d-lg-flex">
       <template v-for="(item, index) in navbarData" :key="index">
@@ -36,9 +39,8 @@
         "
         :href="mainData.eventInfo.registeration.link"
         class="d-md-flex d-lg-flex d-sm-flex d-none mr-3"
-        :size="screenWidth < 400 ? 'x-small' : 'small'"
         target="_blank"
-        color="#4182F1"
+        color="#FFD427"
         style="
           border: 1.5px solid #1e1e1e;
           color: black;

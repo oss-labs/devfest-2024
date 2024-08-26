@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="default">
-    <v-container fluid class="mt-5 fill-height">
+    <v-container fluid class=" fill-height">
       <v-row justify="center" align="center">
         <v-col md="6" cols="12">
           <h1>Badge</h1>
@@ -14,7 +14,7 @@
           <v-btn
             class="mt-4 mb-5"
             size="large"
-            color="#4182F1"
+            color="#FFD427"
             @click="triggerFileUpload"
             rounded
             variant="flat"
@@ -59,8 +59,8 @@
         </v-col>
         <v-col md="6" cols="12" class="px-md-10">
           <div
-            style="background: #eeeeee; border-radius: 18px"
-            class="text-center pa-5 pa-md-5"
+            style="background: #eeeeee; border-radius: 20px;border: 1.5px solid black;"
+            class="text-center pa-5 pa-md-5 py-md-10"
           >
             <canvas
               ref="canvasRef"
@@ -85,7 +85,7 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import gdgImage from "/public/img/common/badge.png";
+import gdgImage from "../assets/img/badge.png";
 const { mainData } = useJSONData();
 definePageMeta({
   layout: false,

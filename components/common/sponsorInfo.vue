@@ -17,7 +17,7 @@
         :key="indexp"
       >
         <div
-          style="background-color: #eeeeee; border-radius: 15px"
+          style="background-color: #F3F3F3; border-radius: 15px;border: 1.5px solid black;"
           class="pa-5"
         >
           <ClientOnly>

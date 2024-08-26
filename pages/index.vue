@@ -3,15 +3,19 @@
     <v-container fluid>
       <v-row>
         <!-- Hero -->
-        <HomeHeroSection />
+        <HomeHeroSection class="my-0 my-md-10" />
         <!-- Hero -->
 
+        <!-- Stats -->
+        <HomeStats class="my-0 my-md-5"/>
+        <!-- Stats -->
+
         <!-- Whats New -->
-        <HomeExpectionSection />
+        <HomeExpectionSection class="mt-md-10" />
         <!-- Whats New -->
 
         <!-- Technologies -->
-        <HomeTechSection />
+        <HomeTechSection class="mb-md-10" />
         <!-- Technologies -->
 
         <!-- Past DevFest -->

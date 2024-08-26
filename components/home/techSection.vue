@@ -1,15 +1,14 @@
 <template>
   <v-container fluid>
     <v-row>
-      <v-col md="8" cols="12">
+      <v-col md="9" cols="12">
         <div
-          style="background-color: #eeeeee; border-radius: 20px"
+          style="background-color: #eeeeee; border-radius: 20px;border: 1.5px solid black;"
           class="pa-8"
         >
           <h1>Stay updated on the products you love</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-            incidunt fuga, architecto reprehenderit corporis
+            This DevFest we are focusing on the technologies that are trending in the market and are in demand. Let's come together and learn about these technologies from industry leading experts.
           </p>
           <v-container fluid>
             <v-row justify="start" align="start">
@@ -36,14 +35,22 @@
         </div>
       </v-col>
 
-      <v-col md="4" cols="12">
-        <v-img src="/public/img/common/side.png" rounded="xl"></v-img>
+      <v-col md="3" cols="12">
+        <div
+          style="background-color: #eeeeee; border-radius: 20px;border: 1.5px solid black;"
+          class="pa-8 text-center"
+        >
+          <v-img style="width: 100%;margin: auto;" src="/assets/img/extra//logo-text.svg"></v-img>
+          <v-chip class="mt-n12" variant="outlined" color="black" style="background-color: white;">{{ mainData.communityLocation.city }}</v-chip>
+          <v-img style="width: 90%;margin: auto;" src="/assets/img/gdg-logo.svg"></v-img>
+        </div>
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script setup>
+const { mainData } = useJSONData();
 var tech = ref([
   {
     name: "Android",

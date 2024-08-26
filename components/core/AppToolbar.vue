@@ -7,12 +7,21 @@
     color="#eeeeee"
   >
     <NuxtLink to="/" class="px-2" style="text-decoration: none; color: black">
-      <div>
-        <v-img width="120" src="/assets/img/devfest-logo.svg"></v-img>
-        <v-chip style="display: inline;background-color: white;" variant="outlined" color="black">{{ mainData.communityLocation.city }}</v-chip>
+      <div class="d-flex">
+        <v-img
+          width="120"
+          src="/assets/img/devfest-logo.svg"
+          class="mr-2"
+        ></v-img>
+        <v-chip
+          style="display: inline; background-color: white"
+          variant="outlined"
+          color="black"
+          class="align-center pt-1"
+          >{{ mainData.communityLocation.city }}</v-chip
+        >
       </div>
     </NuxtLink>
-
 
     <v-spacer></v-spacer>
     <div class="mx-4 d-none d-sm-none d-md-flex d-lg-flex">

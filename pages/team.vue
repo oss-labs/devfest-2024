@@ -14,7 +14,7 @@
         </v-col>
       </v-row>
       <v-row>
-        <v-col md="2" cols="6" v-for="(item, index) in teamData" :key="index">
+        <v-col md="2" sm="3" cols="6" v-for="(item, index) in teamData" :key="index">
           <common-speaker-card :data="item" />
         </v-col>
       </v-row>

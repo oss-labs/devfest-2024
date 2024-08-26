@@ -16,6 +16,7 @@
         <v-col
           md="2"
           cols="6"
+          sm="3"
           v-for="(item, index) in speakersData"
           :key="index"
         >

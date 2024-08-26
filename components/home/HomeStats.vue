@@ -10,14 +10,15 @@
       "
       class="pa-0"
     >
-      <v-col md="2" class="pa-0">
+      <v-col md="2" sm="2" class="pa-0">
         <v-img src="/assets/img/element.svg"></v-img>
       </v-col>
-      <v-col md="10">
+      <v-col md="10" sm="10">
         <v-container fluid>
           <v-row>
             <v-col
               md="3"
+              sm="3"
               class="text-center"
               v-for="(item, index) in mainData.eventInfo.stats"
               :key="index"

@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-row>
-      <v-col md="12">
+      <v-col md="12" sm="12">
         <h1>What to Expect</h1>
         <p>
           An annual event hosted by the Google Developers Group across the world
@@ -12,6 +12,7 @@
       </v-col>
       <v-col
         md="4"
+        sm="4"
         cols="12"
         v-for="(item, index) in mainData.eventInfo.whatToExpect"
         :key="index"

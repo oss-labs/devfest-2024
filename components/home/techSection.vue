@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-row>
-      <v-col md="9" cols="12">
+      <v-col md="9" sm="7" cols="12">
         <div
           style="background-color: #eeeeee; border-radius: 20px;border: 1.5px solid black;"
           class="pa-8"
@@ -35,7 +35,7 @@
         </div>
       </v-col>
 
-      <v-col md="3" cols="12">
+      <v-col md="3" sm="5" cols="12">
         <div
           style="background-color: #eeeeee; border-radius: 20px;border: 1.5px solid black;"
           class="pa-8 text-center"

@@ -1,7 +1,7 @@
 <template>
   <v-container fluid class="">
     <v-row justify="center" align="center">
-      <v-col md="6" cols="12" order-md="1" order="2">
+      <v-col md="6" sm="6" cols="12" order-md="1" order="2" order-sm="1">
         <h1 class="responsive-h1 my-4">
           DevFest <br>
           {{ mainData.communityLocation.city }} 2024
@@ -39,7 +39,7 @@
           >Register Now</v-btn
         >
       </v-col>
-      <v-col md="6" cols="12" order-md="2" order="1">
+      <v-col md="6" sm="6" cols="12" order-md="2" order="1" order-sm="2">
         <v-img src="assets/img/hero-image.svg"></v-img>
       </v-col>
     </v-row>

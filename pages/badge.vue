@@ -2,7 +2,7 @@
   <NuxtLayout name="default">
     <v-container fluid class=" fill-height">
       <v-row justify="center" align="center">
-        <v-col md="6" cols="12">
+        <v-col md="6" sm="7" cols="12">
           <h1>Badge</h1>
           <p class="mt-2">
             Upload an image and generate a personalized badge with the DevFest
@@ -57,7 +57,7 @@
             </span>
           </p>
         </v-col>
-        <v-col md="6" cols="12" class="px-md-10">
+        <v-col md="6" sm="5" cols="12" class="px-md-10">
           <div
             style="background: #eeeeee; border-radius: 20px;border: 1.5px solid black;"
             class="text-center pa-5 pa-md-5 py-md-10"

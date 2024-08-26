@@ -7,7 +7,7 @@
         <!-- Hero -->
 
         <!-- Stats -->
-        <HomeStats class="my-0 my-md-5"/>
+        <HomeStatsv1 class="my-0 my-md-5" />
         <!-- Stats -->
 
         <!-- Whats New -->
@@ -60,5 +60,4 @@ useSeoMeta({
 });
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

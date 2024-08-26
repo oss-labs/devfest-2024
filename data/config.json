@@ -31,19 +31,27 @@
     "stats": [
       {
         "name": "Speakers",
-        "value": "23+"
+        "value": "23+",
+        "color": "#C3ECF6",
+        "image": "img/common/blue.png"
       },
       {
         "name": "Participants",
-        "value": "200+"
+        "value": "200+",
+        "color": "#F8D8D8",
+        "image": "img/common/pink.png"
       },
       {
         "name": "Sessions",
-        "value": "10+"
+        "value": "10+",
+        "color": "#CCF6C5",
+        "image": "img/common/green.png"
       },
       {
         "name": "Workshops",
-        "value": "2+"
+        "value": "2+",
+        "color": "#FFE7A5",
+        "image": "img/common/yellow.png"
       }
     ],
     "whatToExpect": [

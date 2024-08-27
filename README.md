@@ -1,7 +1,7 @@
 # DevFest 2024
-<!-- ![asd](/public/thumbnail.png) -->
+![asd](/public/thumbnail.png)
 
-<img src="https://raw.githubusercontent.com/vrijraj/devfest-2024/main/public/thumbnail.png?token=GHSAT0AAAAAACGBMMHPW4OQ7IDW5PWCVW66ZWN5CRA" style="border-radius:12px">
+<!-- <img src="https://raw.githubusercontent.com/vrijraj/devfest-2024/main/public/thumbnail.png?token=GHSAT0AAAAAACGBMMHPW4OQ7IDW5PWCVW66ZWN5CRA" style="border-radius:12px"> -->
 
 ## Setup
 

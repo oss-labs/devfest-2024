@@ -44,7 +44,7 @@ const dialog = ref(false);
 <style scoped>
 .image-container {
   position: relative;
-  width: 100%;
+  width: 80%;
   margin-top: 20px;
 }
 

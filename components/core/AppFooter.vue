@@ -1,7 +1,7 @@
 <template>
   <v-container fluid class="px-5 mt-8" style="background-color: #202124">
     <v-row
-      justify="center"
+      justify-center
       align="center"
       style="max-width: 1400px; margin-left: auto; margin-right: auto"
     >
@@ -15,7 +15,7 @@
       </v-col>
       <v-col md="10" cols="12">
         <v-container fluid class="pa-0">
-          <v-row justify="" align="center">
+          <v-row justify-center align="center">
             <v-col md="9" cols="12">
               <a
                 href="https://developers.google.com/community/gdg"

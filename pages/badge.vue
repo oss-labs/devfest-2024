@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout name="default">
     <v-container fluid class=" fill-height">
-      <v-row justify="center" align="center">
+      <v-row justify-center align="center">
         <v-col md="6" sm="7" cols="12">
           <h1>Badge</h1>
           <p class="mt-2">

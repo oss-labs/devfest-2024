@@ -48,7 +48,7 @@
       </v-col>
     </v-row>
     <v-row class="my-0">
-      <v-col md="3" sm="3">
+      <v-col md="6" sm="6">
         <v-img
           height="250"
           rounded="xl"
@@ -58,14 +58,6 @@
         ></v-img>
       </v-col>
       <v-col md="6" sm="6">
-        <v-img
-          rounded="xl"
-          height="250"
-          cover
-          src="/assets/img/devfest-elements.svg"
-        ></v-img>
-      </v-col>
-      <v-col md="3" sm="3">
         <v-img
           height="250"
           rounded="xl"

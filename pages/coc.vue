@@ -10,7 +10,7 @@
           </p>
 
           <v-container fluid class="ma-0 pa-0 mt-8">
-            <v-row align="start" justify="start">
+            <v-row align="start" justify-start>
               <v-col
                 md="4"
                 cols="12"

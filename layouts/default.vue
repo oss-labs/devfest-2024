@@ -6,7 +6,7 @@
     </ClientOnly>
     <v-main
       class="mt-3"
-      style="max-width: 1400px; margin-left: auto; margin-right: auto"
+      style="max-width: 1200px; margin-left: auto; margin-right: auto"
     >
       <slot></slot>
     </v-main>

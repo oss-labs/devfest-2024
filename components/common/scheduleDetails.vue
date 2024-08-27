@@ -1,7 +1,7 @@
 <template>
   <v-container fluid class="pa-0 ma-0" v-if="props.data" style="">
     <v-row
-      justify="center"
+      justify-center
       align="center"
       v-for="(item, index) in props.data['schedule']"
       :key="index"

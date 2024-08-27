@@ -17,7 +17,7 @@
               : '/img/common/avatar.png'
           "
         ></v-img>
-        <h3>{{ props.data.name }}</h3>
+        <h3 class="mt-n1">{{ props.data.name }}</h3>
         <p style="font-size: 90%">{{ props.data.company.name }}</p>
       </div>
     </template>
@@ -26,7 +26,7 @@
       max-width="800"
       rounded="xl"
       class="pa-4"
-      style="border: 1.5px solid black"
+      style="border: 2px solid black"
     >
       <v-container fluid>
         <v-row>

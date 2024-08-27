@@ -11,7 +11,7 @@
             This DevFest we are focusing on the technologies that are trending in the market and are in demand. Let's come together and learn about these technologies from industry leading experts.
           </p>
           <v-container fluid>
-            <v-row justify="start" align="start">
+            <v-row justify-start align="start">
               <v-col
                 md="1"
                 sm="2"

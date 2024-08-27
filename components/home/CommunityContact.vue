@@ -10,7 +10,7 @@
             border: 1.5px solid black;
           "
         >
-          <v-row justify="center" align="center" class="pa-5">
+          <v-row justify-center align="center" class="pa-5">
             <v-col md="5" sm="6" cols="12">
               <h1 style="line-height: normal;">
                 Keep in touch with {{ mainData.communityName }} for the latest

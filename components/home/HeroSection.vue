@@ -1,6 +1,6 @@
 <template>
   <v-container fluid class="">
-    <v-row justify="center" align="center">
+    <v-row justify-center align="center">
       <v-col md="6" sm="6" cols="12" order-md="1" order="2" order-sm="1">
         <h1 class="responsive-h1 my-4">
           DevFest <br>

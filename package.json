@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
-    "@vite-pwa/nuxt": "^0.10.0",
     "firebase": "^10.13.0",
     "nuxt": "^3.12.4",
+    "nuxt-gtag": "^3.0.1",
     "vue": "latest"
   },
   "devDependencies": {

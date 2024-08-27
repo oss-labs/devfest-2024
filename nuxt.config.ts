@@ -14,7 +14,7 @@ export default defineNuxtConfig({
         config.plugins.push(vuetify({ autoImport: true }));
       });
     },
-    '@vite-pwa/nuxt'
+    'nuxt-gtag'
   ],
   vite: {
     vue: {
@@ -23,7 +23,7 @@ export default defineNuxtConfig({
       },
     },
   },
-  pwa: {
-    
-  }
+  gtag: {
+    id: "G-NLQ83656QY",
+  },
 });

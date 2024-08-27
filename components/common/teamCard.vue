@@ -9,6 +9,8 @@
         <v-img class="frame" src="/assets/img/frame.png"></v-img>
         <v-img
           class="avatar"
+          aspect-ratio="1"
+          cover
           :src="
             props.data.image.length
               ? '/img/team/' + props.data.image

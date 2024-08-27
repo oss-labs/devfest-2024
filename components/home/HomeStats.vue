@@ -9,7 +9,7 @@
         border: 1.5px solid black;
       "
     >
-      <v-col cols="12" md="2" sm="12" order-md="1" order="2" order-sm="1">
+      <v-col cols="12" md="2" sm="12" order-md="1" order="2" order-sm="1" class="pa-0">
         <!--Desktop-->
         <v-img
           class="d-none d-sm-none d-md-flex d-lg-flex d-xl-flex"

@@ -4,7 +4,7 @@ Show some ❤️ and star the repo to support the project
 
 ![asd](/public/thumbnail.png)
 
-<!-- <img src="https://raw.githubusercontent.com/vrijraj/devfest-2024/main/public/thumbnail.png?token=GHSAT0AAAAAACGBMMHPW4OQ7IDW5PWCVW66ZWN5CRA" style="border-radius:12px"> -->
+<!-- <img src="https://raw.githubusercontent.com/oss-labs/devfest-2024/main/public/thumbnail.png" style="border-radius:12px"> -->
 
 
 ## Getting Started
@@ -63,11 +63,10 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 * [Firebase](https://firebase.google.com/)
 
 ## Contributing
-
-Awesome! Contributions of all kinds are greatly appreciated. To help smoothen the process we have a few non-exhaustive guidelines to follow which should get you going in no time.
+Awesome! We would greatly appreciate it if you could contribute to all kinds. To help smoothen the process we have a few non-exhaustive guidelines to follow which should get you going in no time.
 
 ## LICENSE
-Check out the developer [LICENSE](https://github.com/oss-labs/iox24-webapp/blob/main/LICENSE)
+Check out the developer [LICENSE](https://github.com/oss-labs/devfest-2024/blob/main/LICENSE)
 
 ## Facing Any Problem or need any Help?
-Write us in the [issues](https://github.com/vrijraj/oss-labs/iox24-webapp/issues) section. Our team will try to solve your issue within 10-12 hours.<be>
+Write us in the [issues](https://github.com/oss-labs/devfest-2024/issues) section. Our team will try to solve your issue within 10-12 hours.<be>

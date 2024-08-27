@@ -1,25 +1,54 @@
 <template>
-  <v-dialog v-model="dialog" width="700" persistent>
+  <v-dialog v-model="dialog" width="900" persistent>
     <template v-slot:activator="{ props: activatorProps }">
-      <div v-bind="activatorProps" class="text-center image-container">
+      <div
+        style="cursor: pointer"
+        v-bind="activatorProps"
+        class="text-center image-container"
+      >
         <v-img class="frame" src="/assets/img/frame.png"></v-img>
-        <v-img class="avatar" src="/assets/img/demo3.jpg"></v-img>
-        <h4>{{ props.data.name }}</h4>
-        <p>{{ props.data.company.name }}</p>
+        <v-img
+          class="avatar"
+          :src="
+            props.data.image.length
+              ? '/img/speakers/' + props.data.image
+              : '/img/common/avatar.png'
+          "
+        ></v-img>
+        <h3 class="mt-3">{{ props.data.name }}</h3>
+        <p style="font-size: 90%">{{ props.data.company.name }}</p>
       </div>
     </template>
 
-    <v-card max-width="800" rounded="xl" class="pa-4">
+    <v-card max-width="800" rounded="xl" class="pa-4" style="border: 1.5px solid black">
       <v-container fluid>
-        <v-avatar size="100">
-          <v-img
-            src="https://raw.githubusercontent.com/vrijraj/devfest-website-2023/main/src/assets/img/common/avatar.jpg"
-          ></v-img>
-        </v-avatar>
-        <h3 class="mt-3">{{ props.data.name }}</h3>
-        <p>{{ props.data.bio }}</p>
+        <v-row>
+          <v-col md="4" cols="12">
+            <div class="text-center image-container">
+              <v-img class="frame" src="/assets/img/frame.png"></v-img>
+              <v-img
+                class="avatar"
+                :src="
+                  props.data.image.length
+                    ? '/img/team/' + props.data.image
+                    : '/img/common/avatar.png'
+                "
+              ></v-img>
+            </div>
+          </v-col>
+          <v-col md="8" cols="12">
+            <h1 class="mt-3 mb-0">{{ props.data.name }}</h1>
+            <p style="font-weight: 500" class="mt-n1">
+              {{ props.data.community_title }} |
+              {{ props.data.company.designation }},
+              {{ props.data.company.name }}
+            </p>
 
-        <common-speaker-social-button :socialLinks="props.data.social" />
+            <p class="mt-4">{{ props.data.bio }}</p>
+
+            <common-speaker-social-button :socialLinks="props.data.social" />
+          </v-col>
+        </v-row>
       </v-container>
       <template v-slot:actions>
         <v-btn text @click="dialog = false">Close</v-btn>

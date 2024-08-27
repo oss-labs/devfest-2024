@@ -7,10 +7,10 @@
   "communityDescription": "GDG is an independent group; our activities and the opinions expressed here should in no way be linked to Google, the corporation.",
   "communityLinks": {
     "page": "https://gdg.community.dev/gdg-london/",
-    "website": "",
-    "instagram": "",
+    "website": "https://gdg.community.dev/gdg-london/",
+    "instagram": "https://gdg.community.dev/gdg-london/",
     "linkedin": "https://www.linkedin.com/company/google-developers-london/",
-    "youtube": ""
+    "youtube": "https://gdg.community.dev/gdg-london/"
   },
   "eventInfo": {
     "name": "DevFest London 2024",
@@ -70,6 +70,7 @@
     ],
     "pastDevFest": {
       "summery": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente amet asperiores unde. Adipisci nobis ipsum fuga amet? Ut, iusto tenetur quisquam neque consectetur impedit magnam unde harum a mollitia possimus? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores laborum ut praesentium architecto a. Recusandae neque deserunt saepe mollitia quibusdam a nihil dicta in, totam hic molestias eaque. Dolores, nisi.",
+      "images": ["image-1.png", "image-2.png", "image-3.png"],
       "stats": [
         {
           "name": "Speakers",

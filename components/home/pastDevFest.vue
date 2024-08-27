@@ -11,7 +11,7 @@
           rounded="xl"
           cover
           class="mt-6"
-          src="/img/common/past-devfest.jpg"
+          :src="`/img/past-devfest/${mainData.eventInfo.pastDevFest.images[0]}`"
         ></v-img>
       </v-col>
       <v-col md="12" sm="12" cols="12">
@@ -53,7 +53,7 @@
           height="250"
           rounded="xl"
           cover
-          src="/img/common/past-devfest.jpg"
+          :src="`/img/past-devfest/${mainData.eventInfo.pastDevFest.images[1]}`"
           style="border: 1.5px solid black"
         ></v-img>
       </v-col>
@@ -62,7 +62,6 @@
           rounded="xl"
           height="250"
           cover
-          style="border: 1.5px solid black"
           src="/assets/img/devfest-elements.svg"
         ></v-img>
       </v-col>
@@ -71,7 +70,7 @@
           height="250"
           rounded="xl"
           cover
-          src="/img/common/past-devfest.jpg"
+          :src="`/img/past-devfest/${mainData.eventInfo.pastDevFest.images[2]}`"
           style="border: 1.5px solid black"
         ></v-img>
       </v-col>
@@ -81,7 +80,6 @@
 
 <script setup>
 const { mainData } = useJSONData();
-
 const colors = ref(["#C3ECF6", "#F8D8D8", "#FFE7A5", "#CCF6C5"]);
 </script>
 

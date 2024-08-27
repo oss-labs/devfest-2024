@@ -5,6 +5,8 @@
       class="mr-1 mb-1"
       v-if="socialLinks.linkedin != null && socialLinks.linkedin.length"
       icon="mdi-linkedin"
+      :href="socialLinks.linkedin"
+      target="_blank"
       size="small"
       :color="dark ? 'white' : ''"
       variant="text"
@@ -14,6 +16,8 @@
       v-if="socialLinks.github != null && socialLinks.github.length"
       icon="mdi-github"
       :color="dark ? 'white' : ''"
+      :href="socialLinks.github"
+      target="_blank"
       size="small"
       variant="text"
     ></v-btn>
@@ -21,6 +25,8 @@
       class="mr-1 mb-1"
       icon="mdi-twitter"
       :color="dark ? 'white' : ''"
+      :href="socialLinks.twitter"
+      target="_blank"
       size="small"
       v-if="socialLinks.twitter != null && socialLinks.twitter.length"
       variant="text"
@@ -31,6 +37,8 @@
       :color="dark ? 'white' : ''"
       v-if="socialLinks.instagram != null && socialLinks.instagram.length"
       size="small"
+      :href="socialLinks.instagram"
+      target="_blank"
       variant="text"
     ></v-btn>
     <v-btn
@@ -39,6 +47,8 @@
       :color="dark ? 'white' : ''"
       v-if="socialLinks.web != null && socialLinks.web.length"
       size="small"
+      :href="socialLinks.web"
+      target="_blank"
       variant="text"
     ></v-btn>
     <v-btn
@@ -46,6 +56,8 @@
       icon="mdi-youtube"
       :color="dark ? 'white' : ''"
       v-if="socialLinks.youtube != null && socialLinks.youtube.length"
+      :href="socialLinks.youtube"
+      target="_blank"
       size="small"
       variant="text"
     ></v-btn>

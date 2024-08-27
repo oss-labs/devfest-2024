@@ -12,6 +12,7 @@
           </p>
         </v-col>
       </v-row>
+
       <v-row>
         <v-col
           md="2"
@@ -57,5 +58,4 @@ useSeoMeta({
 });
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

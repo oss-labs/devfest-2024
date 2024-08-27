@@ -11,7 +11,7 @@
       class="pa-0"
     >
       <v-col md="2" sm="2" class="pa-0">
-        <v-img src="/assets/img/element.svg"></v-img>
+        <v-img src="/assets/img/element1.svg"></v-img>
       </v-col>
       <v-col md="10" sm="10">
         <v-container fluid>
@@ -23,7 +23,7 @@
               v-for="(item, index) in mainData.eventInfo.stats"
               :key="index"
             >
-              <h1 style="font-size: 300%;">{{ item.value }}</h1>
+              <h1 style="font-size: 300%">{{ item.value }}</h1>
               <p>{{ item.name }}</p>
             </v-col>
           </v-row>
@@ -37,5 +37,4 @@
 const { mainData } = useJSONData();
 </script>
 
-<style>
-</style>
+<style></style>

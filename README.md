@@ -4,9 +4,6 @@ Show some ❤️ and star the repo to support the project
 
 ![asd](/public/thumbnail.png)
 
-<!-- <img src="https://raw.githubusercontent.com/oss-labs/devfest-2024/main/public/thumbnail.png" style="border-radius:12px"> -->
-
-
 ## Getting Started
 1. Fork the repo
 1. Setup Environment
@@ -59,7 +56,7 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 ## Technology Stack
 
 * [VueJS](https://vuejs.org/)
-* [Nuxt](https://nuxt.com/))
+* [Nuxt](https://nuxt.com/)
 * [Firebase](https://firebase.google.com/)
 
 ## Contributing

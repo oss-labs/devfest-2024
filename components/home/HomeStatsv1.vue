@@ -3,54 +3,47 @@
     <v-row
       justify="center"
       align="center"
-      class="Stats-block pa-0"
       style="
         background-color: #f3f3f3;
         border-radius: 20px;
         border: 1.5px solid black;
       "
     >
-      <v-col md="2" sm="2" class="pa-0">
-        <div class="element">
-          <v-img class="element-img1" src="/assets/img/element1.svg"></v-img>
-          <v-img class="element-img2" src="/assets/img/element2.svg"></v-img>
-          <v-img class="element-img3" src="/assets/img/element3.svg"></v-img>
-        </div>
-        <!-- <v-img src="/assets/img/element.svg "></v-img> -->
+      <v-col cols="12" md="2" sm="12" order-md="1" order="2" order-sm="1">
+        <!--Desktop-->
+        <v-img
+          class="d-none d-sm-none d-md-flex d-lg-flex d-xl-flex"
+          src="/assets/img/element1.svg"
+        ></v-img>
+        <!--mobile-->
+        <v-img
+          class="d-flex d-sm-none d-md-none d-lg-none d-xl-none"
+          src="/assets/img/element3.svg"
+        ></v-img>
       </v-col>
-      <v-col md="10" sm="10">
+
+      <v-col cols="12" md="10" sm="12" order-md="2" order="1" order-sm="2">
         <v-container fluid>
           <v-row>
             <v-col
               md="3"
               sm="3"
-              class="text-center m-1 Stats-div"
+              cols="6"
+              class="stats-container"
               :style="{
                 backgroundImage: `url(${item.image})`,
                 backgroundPosition: 'center',
                 height: '200px',
-                padding: '20px',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
-                position: 'relative',
               }"
               v-for="(item, index) in mainData.eventInfo.stats"
               :key="index"
             >
               <h1 class="responsive-title">{{ item.value }}</h1>
-              <p
-                :style="{
-                  position: 'absolute',
-                  bottom: '7px',
-                  left: '42px',
-                  fontSize:
-                    screenWidth > 600
-                      ? '40px'
-                      : '20px' /* Responsive font size */,
-                }"
-              >
+              <p>
                 {{ item.name }}
               </p>
             </v-col>
@@ -66,85 +59,41 @@ const { mainData } = useJSONData();
 </script>
 
 <style scoped>
-/* /////////////For the status Section*/
-.Stats-block {
-  display: flex;
-  flex-direction: row;
-}
-@media (max-width: 1024px) {
-  .Stats-block {
-    flex-direction: column-reverse;
-  }
-}
-
-/* /////////////For h1 tag font size */
-
 .responsive-title {
   font-size: 300%;
 }
-@media (max-width: 1024px) {
+.stats-container {
+  background-size: 70%;
+}
+
+@media (max-width: 1140px) {
   .responsive-title {
     font-size: 250%;
   }
-}
-
-/* /////////////For status divs - Speakers/Participants/Sessions/Workshops*/
-
-@media (max-width: 1024px) {
-  .Stats-div {
-    flex: 0 0 30%;
-    max-width: 98%;
-    margin: 1%;
+  .stats-container {
+    background-size: 85%;
   }
 }
 
-@media (max-width: 850px) {
-  .Stats-div {
-    flex: 0 0 48%;
-    max-width: 98%;
-    margin: 1%;
+@media (max-width: 860px) {
+  .responsive-title {
+    font-size: 180%;
   }
 }
-
-@media (max-width: 480px) {
-  .Stats-div {
-    flex: 0 0 95%;
-    max-width: 95%;
-    margin: 1%;
+@media (max-width: 600px) {
+  .responsive-title {
+    font-size: 250%;
+  }
+  .stats-container {
+    background-size: 75%;
   }
 }
-
-/* ///////////// Different images for viewports */
-
-.element-img1 {
-  display: block;
-}
-.element-img2 {
-  display: none;
-}
-.element-img3 {
-  display: none;
-}
-@media screen and (max-width: 1024px) {
-  .element-img1 {
-    display: none;
+@media (max-width: 460px) {
+  .responsive-title {
+    font-size: 180%;
   }
-  .element-img2 {
-    display: none;
-  }
-  .element-img3 {
-    display: none;
-  }
-}
-@media screen and (max-width: 600px) {
-  .element-img1 {
-    display: none;
-  }
-  .element-img2 {
-    display: none;
-  }
-  .element-img3 {
-    display: block;
+  .stats-container {
+    background-size: 80%;
   }
 }
 </style>

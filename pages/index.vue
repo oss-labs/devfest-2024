@@ -44,6 +44,7 @@ useSeoMeta({
   contentType: "text/html; charset=utf-8",
   title: mainData.eventInfo.name + " | " + mainData.communityName,
   description: mainData.eventInfo.description.short,
+  ogLocale:'en_US',
   keywords: mainData.seo.keywords,
   author: "OSS Labs",
   creator: "OSS Labs",

@@ -56,6 +56,7 @@ useSeoMeta({
   title: "FAQ - " + mainData.eventInfo.name + " | " + mainData.communityName,
   description: mainData.eventInfo.description.short,
   keywords: mainData.seo.keywords,
+  ogLocale:'en_US',
   author: "OSS Labs",
   creator: "OSS Labs",
   viewport: "width=device-width, initial-scale=1.0",

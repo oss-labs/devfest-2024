@@ -9,6 +9,8 @@
         <v-img class="frame" src="/assets/img/frame.png"></v-img>
         <v-img
           class="avatar"
+          aspect-ratio="1"
+          cover
           :src="
             props.data.image.length
               ? '/img/speakers/' + props.data.image
@@ -20,7 +22,12 @@
       </div>
     </template>
 
-    <v-card max-width="800" rounded="xl" class="pa-4" style="border: 1.5px solid black">
+    <v-card
+      max-width="800"
+      rounded="xl"
+      class="pa-4"
+      style="border: 1.5px solid black"
+    >
       <v-container fluid>
         <v-row>
           <v-col md="4" cols="12">
@@ -81,6 +88,7 @@ const dialog = ref(false);
   width: 100%;
   height: auto;
   position: relative;
+  border: 1px solid white;
 }
 
 .frame {

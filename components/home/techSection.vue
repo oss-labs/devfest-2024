@@ -19,14 +19,14 @@
                 v-for="(item, index) in tech"
                 :key="index"
               >
-                <a :href="item.link" target="_blank">
+                <a :href="item.link" target="_blank" aria-label="link">
                   <v-avatar
                     color="white"
                     size="60"
                     class="pa-3"
                     style="border: 1px solid black"
                   >
-                    <v-img :src="item.logo" :lazy-src="item.logo"></v-img>
+                    <v-img alt="tech image" :src="item.logo" :lazy-src="item.logo"></v-img>
                   </v-avatar>
                 </a>
               </v-col>
@@ -40,9 +40,9 @@
           style="background-color: #eeeeee; border-radius: 20px;border: 1.5px solid black;"
           class="pa-8 text-center"
         >
-          <v-img style="width: 100%;margin: auto;" src="/assets/img/extra//logo-text.svg"></v-img>
+          <v-img alt="image" style="width: 100%;margin: auto;" src="/assets/img/extra/logo-text.svg"></v-img>
           <v-chip class="mt-n12" variant="outlined" color="black" style="background-color: white;">{{ mainData.communityLocation.city }}</v-chip>
-          <v-img style="width: 90%;margin: auto;" src="/assets/img/gdg-logo.svg"></v-img>
+          <v-img alt="image" style="width: 90%;margin: auto;" src="/assets/img/gdg-logo.svg"></v-img>
         </div>
       </v-col>
     </v-row>

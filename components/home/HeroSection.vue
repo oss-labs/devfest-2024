@@ -40,7 +40,7 @@
         >
       </v-col>
       <v-col md="6" sm="6" cols="12" order-md="2" order="1" order-sm="2">
-        <v-img src="assets/img/hero-image.svg"></v-img>
+        <v-img alt="logo" src="assets/img/hero-image.svg" lazy-src="assets/img/hero-image.svg"></v-img>
       </v-col>
     </v-row>
   </v-container>

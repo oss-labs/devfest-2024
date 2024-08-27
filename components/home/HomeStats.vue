@@ -12,11 +12,13 @@
       <v-col cols="12" md="2" sm="12" order-md="1" order="2" order-sm="1" class="pa-0">
         <!--Desktop-->
         <v-img
+          alt="image"
           class="d-none d-sm-none d-md-flex d-lg-flex d-xl-flex"
           src="/assets/img/element1.svg"
         ></v-img>
         <!--mobile-->
         <v-img
+          alt="image"
           class="d-flex d-sm-none d-md-none d-lg-none d-xl-none"
           src="/assets/img/element3.svg"
         ></v-img>

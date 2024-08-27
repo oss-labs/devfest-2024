@@ -23,8 +23,8 @@
           <ClientOnly>
             <v-tooltip location="bottom" :key="indexp">
               <template v-slot:activator="{ props }">
-                <a :href="sponsor.link" target="_blank" v-bind="props">
-                  <v-img :src="'/img/sponsors/' + sponsor.logo"></v-img>
+                <a aria-label="sponsor name" :href="sponsor.link" target="_blank" v-bind="props">
+                  <v-img alt="sponsor-logo" :src="'/img/sponsors/' + sponsor.logo"></v-img>
                 </a>
               </template>
               <span>{{ sponsor.name }}</span>

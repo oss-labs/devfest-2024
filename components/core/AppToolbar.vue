@@ -14,6 +14,7 @@
       <div class="d-flex">
         <v-img
           width="120"
+          alt="logo"
           src="/assets/img/devfest-logo.svg"
           class="mr-2"
         ></v-img>

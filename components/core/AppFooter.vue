@@ -21,6 +21,7 @@
                 href="https://developers.google.com/community/gdg"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="link"
                 class="grey--text text--darken-3 mr-6 google-font"
                 style="text-decoration: none; color: white"
                 >About GDG Program</a
@@ -30,6 +31,7 @@
                 href="https://www.womentechmakers.com/"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="link"
                 class="grey--text text--darken-3 mr-6 google-font"
                 style="text-decoration: none; color: white"
                 >About WTM Program</a
@@ -39,6 +41,7 @@
               <router-link
                 to="/faq"
                 rel="noreferrer"
+                aria-label="link"
                 class="mr-6 google-font grey--text text--darken-3"
                 style="text-decoration: none; color: white"
                 >FAQ</router-link
@@ -48,6 +51,7 @@
                 to="/coc"
                 style="text-decoration: none; color: white"
                 rel="noreferrer"
+                aria-label="link"
                 class="mr-6 google-font grey--text text--darken-3"
                 >Code of conduct</router-link
               >
@@ -56,6 +60,7 @@
                 href="https://developers.google.com/community-guidelines"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="link"
                 class="mr-6 google-font grey--text text--darken-3"
                 style="text-decoration: none; color: white"
                 >Community Guidelines</a

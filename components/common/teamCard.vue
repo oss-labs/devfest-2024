@@ -6,11 +6,12 @@
         style="cursor: pointer"
         class="text-center image-container"
       >
-        <v-img class="frame" src="/assets/img/frame.png"></v-img>
+        <v-img alt="frame" class="frame" src="/assets/img/frame.png"></v-img>
         <v-img
           class="avatar"
           aspect-ratio="1"
           cover
+          :alt="props.data.name"
           :src="
             props.data.image.length
               ? '/img/team/' + props.data.image
@@ -32,9 +33,10 @@
         <v-row>
           <v-col md="4" cols="12">
             <div class="text-center image-container">
-              <v-img class="frame" src="/assets/img/frame.png"></v-img>
+              <v-img alt="frame" class="frame" src="/assets/img/frame.png"></v-img>
               <v-img
                 class="avatar"
+                :alt="props.data.name"
                 :src="
                   props.data.image.length
                     ? '/img/team/' + props.data.image

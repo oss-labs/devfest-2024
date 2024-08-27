@@ -27,6 +27,7 @@
           <v-img
             :src="getImage(index + 1)"
             width="140"
+            alt="image"
             class="float-right mr-5"
           ></v-img>
           <div class="pa-8">

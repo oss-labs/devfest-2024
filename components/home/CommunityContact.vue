@@ -27,7 +27,7 @@
             </v-col>
             <v-col md="4" sm="1"></v-col>
             <v-col md="3" sm="5" cols="12">
-              <v-img src="/assets/img/gdg-logo.svg"></v-img>
+              <v-img alt="logo" src="/assets/img/gdg-logo.svg"></v-img>
             </v-col>
           </v-row>
         </v-container>

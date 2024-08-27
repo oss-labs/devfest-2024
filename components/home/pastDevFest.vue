@@ -9,6 +9,7 @@
         <v-img
           style="max-height: 300px; border: 1.5px solid black"
           rounded="xl"
+          alt="image"
           cover
           class="mt-6"
           :src="`/img/past-devfest/${mainData.eventInfo.pastDevFest.images[0]}`"
@@ -53,6 +54,7 @@
           height="250"
           rounded="xl"
           cover
+          alt="image"
           :src="`/img/past-devfest/${mainData.eventInfo.pastDevFest.images[1]}`"
           style="border: 1.5px solid black"
         ></v-img>
@@ -62,6 +64,7 @@
           height="250"
           rounded="xl"
           cover
+          alt="image"
           :src="`/img/past-devfest/${mainData.eventInfo.pastDevFest.images[2]}`"
           style="border: 1.5px solid black"
         ></v-img>

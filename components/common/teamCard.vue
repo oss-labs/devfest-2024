@@ -88,6 +88,7 @@ const dialog = ref(false);
   width: 100%;
   height: auto;
   position: relative;
+  border: 1px solid white;
 }
 
 .frame {

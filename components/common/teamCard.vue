@@ -37,6 +37,8 @@
               <v-img
                 class="avatar"
                 :alt="props.data.name"
+                aspect-ratio="1"
+                cover
                 :src="
                   props.data.image.length
                     ? '/img/team/' + props.data.image

@@ -12,13 +12,16 @@
 
         <p class="my-5">
           <span class="mr-4">
-            <v-icon>mdi-calendar-month</v-icon>
+            <v-icon class="mr-1">mdi-calendar-month</v-icon>
             {{ mainData.eventInfo.date }}
           </span>
 
           <span class="mr-4">
-            <v-icon>mdi-map-legend</v-icon>
-            {{ mainData.eventInfo.venue.address }}
+            <v-icon class="mr-1">mdi-map-legend</v-icon>
+            <a :href="mainData.eventInfo.venue.map_link" target="_blank" style="color:black">
+              {{ mainData.eventInfo.venue.address }}
+            </a>
+            
           </span>
         </p>
 

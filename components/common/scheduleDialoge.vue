@@ -24,7 +24,7 @@
       </div>
     </template>
 
-    <v-card class="pa-0 white" v-if="dialog" style="border-radius: 12px">
+    <v-card class="pa-0 white" v-if="dialog" style="border-radius: 12px;border: 2px solid black" >
       <iframe
         v-if="props.data.link"
         class="ma-0 pa-0"

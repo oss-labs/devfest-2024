@@ -1,9 +1,9 @@
 <template>
   <v-container fluid class="">
     <v-row justify-center align="center">
-      <v-col md="6" sm="6" cols="12" order-md="1" order="2" order-sm="1">
+      <v-col md="6" sm="6" cols="12">
         <h1 class="responsive-h1 my-4">
-          DevFest <br>
+          DevFest <br />
           {{ mainData.communityLocation.city }} 2024
         </h1>
         <p class="" :style="{ maxWidth: '90%' }">
@@ -39,8 +39,12 @@
           >Register Now</v-btn
         >
       </v-col>
-      <v-col md="6" sm="6" cols="12" order-md="2" order="1" order-sm="2">
-        <v-img alt="logo" src="assets/img/hero-image.svg" lazy-src="assets/img/hero-image.svg"></v-img>
+      <v-col md="6" sm="6" cols="12">
+        <v-img
+          alt="logo"
+          src="assets/img/hero-image.svg"
+          lazy-src="assets/img/hero-image.svg"
+        ></v-img>
       </v-col>
     </v-row>
   </v-container>

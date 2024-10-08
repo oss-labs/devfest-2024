@@ -13,12 +13,10 @@
           <v-row justify-center align="center" class="pa-5">
             <v-col md="5" sm="6" cols="12">
               <h1 style="line-height: normal;">
-                Keep in touch with {{ mainData.communityName }} for the latest
-                announcements
+                Mantente en contacto con {{ mainData.communityName }} para recibir las últimas novedades y anuncios.
               </h1>
               <p class="mb-3">
-                Stake out #{{ mainData.communityName }} for the latest updates
-                and news.
+                Sigue de cerca a #{{ mainData.communityName }} para estar al tanto de las últimas actualizaciones y noticias.
               </p>
 
               <CommonSpeakerSocialButton

@@ -24,7 +24,7 @@
                 aria-label="link"
                 class="grey--text text--darken-3 mr-6 google-font"
                 style="text-decoration: none; color: white"
-                >About GDG Program</a
+                >Acerca del programa GDG</a
               >
               <br class="hidden-md-and-up" />
               <a
@@ -34,7 +34,7 @@
                 aria-label="link"
                 class="grey--text text--darken-3 mr-6 google-font"
                 style="text-decoration: none; color: white"
-                >About WTM Program</a
+                >Acerca del programa WTM</a
               >
 
               <br class="hidden-md-and-up" />
@@ -53,7 +53,7 @@
                 rel="noreferrer"
                 aria-label="link"
                 class="mr-6 google-font grey--text text--darken-3"
-                >Code of conduct</router-link
+                >Código de conducta</router-link
               >
               <br class="hidden-md-and-up" />
               <a
@@ -63,7 +63,7 @@
                 aria-label="link"
                 class="mr-6 google-font grey--text text--darken-3"
                 style="text-decoration: none; color: white"
-                >Community Guidelines</a
+                >Normas de la Comunidad</a
               >
             </v-col>
 

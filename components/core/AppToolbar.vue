@@ -49,7 +49,6 @@
         rounded
         v-if="
           mainData &&
-          mainData.eventInfo.registeration.link.length &&
           new Date(mainData.eventInfo.registeration.end_date) > new Date()
         "
         :href="mainData.eventInfo.registeration.link"
@@ -63,7 +62,7 @@
           font-weight: 100;
         "
         variant="flat"
-        >Register Now</v-btn
+        >Registrate</v-btn
       >
     </ClientOnly>
     

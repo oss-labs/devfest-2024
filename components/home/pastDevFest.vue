@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-row class="mb-0">
       <v-col md="12" sm="12" cols="12" class="text-center">
-        <h1>Last Year at DevFest</h1>
+        <h1>Revive la experiencia del DevFest pasado</h1>
         <p>
           {{ mainData.eventInfo.pastDevFest.summery }}
         </p>
@@ -19,7 +19,7 @@
         <v-container fluid class="px-0">
           <v-row>
             <v-col
-              md="3"
+              md="4"
               v-for="(item, index) in mainData.eventInfo.pastDevFest.stats"
               :key="index"
               cols="6"

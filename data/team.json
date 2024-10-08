@@ -1,10 +1,10 @@
 [
   {
     "id": "6001",
-    "name": "Vrijraj Singh",
+    "name": "Carlos Loja",
     "company": {
-      "name": "OSS Labs Community",
-      "designation": "Developer"
+      "name": "The Bridge",
+      "designation": "Software Developer"
     },
     "community_title": "Google Developer Expert for Firebase",
     "image": "vrijraj.jpg",

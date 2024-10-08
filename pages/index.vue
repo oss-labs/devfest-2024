@@ -7,7 +7,7 @@
         <!-- Hero -->
 
         <!-- Stats -->
-        <HomeStats class="my-0 my-md-5" />
+        <!-- <HomeStats class="my-0 my-md-5" /> -->
         <!-- Stats -->
 
         <!-- Whats New -->

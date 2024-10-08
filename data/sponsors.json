@@ -1,56 +1,21 @@
 [
   {
-      "category_name": "Title Sponsors",
+      "category_name": "",
       "sponsors": [
           {
-              "name":"Google For Developers",
-              "link": "https://developers.google.com",
-              "logo": "googlefordevelopers.png"   
-          },
-          {
-              "name":"Google For Developers",
-              "link": "https://developers.google.com",
-              "logo": "googlefordevelopers.png"   
-          },
-          {
-              "name":"Google For Developers",
-              "link": "https://developers.google.com",
-              "logo": "googlefordevelopers.png"   
-          },
-          {
-              "name":"Google For Developers",
-              "link": "https://developers.google.com",
-              "logo": "googlefordevelopers.png"   
+              "name":"Jetbrains",
+              "link": "https://www.jetbrains.com/es-es/",
+              "logo": "jetbrains_DM7wGjl.png"   
           }
       ]
   },
   {
-      "category_name": "Venue Sponsors",
+      "category_name": "Venue",
       "sponsors": [
           {
-              "name":"Google For Developers",
-              "link": "https://developers.google.com",
-              "logo": "googlefordevelopers.png"   
-          },
-          {
-              "name":"Google For Developers",
-              "link": "https://developers.google.com",
-              "logo": "googlefordevelopers.png"   
-          },
-          {
-              "name":"Google For Developers",
-              "link": "https://developers.google.com",
-              "logo": "googlefordevelopers.png"   
-          }
-      ]
-  },
-  {
-      "category_name": "Template Partner",
-      "sponsors": [
-          {
-              "name":"TechFerment",
-              "link": "https://techferment.com",
-              "logo": "techferment.png"   
+              "name":"Universidad de Especialidades Espíritu Santo",
+              "link": "https://uees.edu.ec",
+              "logo": "Logo-UEES-2018---Vertical.png"   
           }
       ]
   }

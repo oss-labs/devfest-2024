@@ -5,8 +5,7 @@
         <v-col md="6" sm="7" cols="12">
           <h1>Badge</h1>
           <p class="mt-2">
-            Upload an image and generate a personalized badge with the DevFest
-            frame.
+            Sube una imagen y genera un distintivo personalizado con el marco de DevFest.
           </p>
 
           <p class="mt-8">Select an Image</p>
@@ -20,7 +19,7 @@
             variant="flat"
             style="border: 1.5px solid #1e1e1e; color: black;text-transform: capitalize"
           >
-            Upload Image
+            Sube la Imagen
             <v-icon>mdi-tray-arrow-up</v-icon>
           </v-btn>
           <input
@@ -34,7 +33,7 @@
 
           <div class="mt-5">
             <label class="google-font mb-5" style="font-size: 110%">
-              Image Shape
+              Forma de la imagen
             </label>
             <br />
             <v-btn-toggle
@@ -46,14 +45,13 @@
               color="#eeeeee"
             >
               <v-btn value="original" class="mx-0 px-5 pb-0">Original</v-btn>
-              <v-btn value="Square" class="mx-0 pb-0 px-5">Square</v-btn>
-              <v-btn value="circle" class="mx-0 pb-0 px-5">Circle</v-btn>
+              <v-btn value="Square" class="mx-0 pb-0 px-5">Cuadrada</v-btn>
+              <v-btn value="circle" class="mx-0 pb-0 px-5">Circular</v-btn>
             </v-btn-toggle>
           </div>
           <p class="mt-8 mb-md-0">
             <span>
-              *&nbsp; We respect your privacy and are not storing your pictures
-              on our servers.
+              *&nbsp;  Respetamos tu privacidad y no almacenamos tus imágenes en nuestros servidores.
             </span>
           </p>
         </v-col>
@@ -74,7 +72,7 @@
               v-show="downloadVisible"
             >
               <v-icon left>mdi-arrow-down-bold-circle-outline</v-icon>
-              Download
+              Descargar
             </v-btn>
           </div>
         </v-col>

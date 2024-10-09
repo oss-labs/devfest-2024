@@ -2,30 +2,18 @@
   <v-container fluid>
     <v-row>
       <v-col md="9" sm="7" cols="12">
-        <div
-          style="background-color: #eeeeee; border-radius: 20px;border: 1.5px solid black;"
-          class="pa-8"
-        >
+        <div style="background-color: #eeeeee; border-radius: 20px;border: 1.5px solid black; min-height: 250px;"
+          class="pa-8">
           <h1>Mantente al día con los productos que amas</h1>
           <p>
-            Este DevFest nos enfocamos en las tecnologías que están en tendencia y tienen gran demanda en el mercado. ¡Unámonos para aprender sobre estas tecnologías de la mano de expertos líderes en la industria!
+            Este DevFest nos enfocamos en las tecnologías que están en tendencia y tienen gran demanda en el mercado.
+            ¡Unámonos para aprender sobre estas tecnologías de la mano de expertos líderes en la industria!
           </p>
           <v-container fluid>
             <v-row justify-start align="start">
-              <v-col
-                md="1"
-                sm="2"
-                cols="3"
-                v-for="(item, index) in tech"
-                :key="index"
-              >
+              <v-col md="1" sm="2" cols="3" v-for="(item, index) in tech" :key="index">
                 <a :href="item.link" target="_blank" aria-label="link">
-                  <v-avatar
-                    color="white"
-                    size="60"
-                    class="pa-3"
-                    style="border: 1px solid black"
-                  >
+                  <v-avatar color="white" size="60" class="pa-3" style="border: 1px solid black">
                     <v-img alt="tech image" :src="item.logo" :lazy-src="item.logo"></v-img>
                   </v-avatar>
                 </a>
@@ -36,12 +24,11 @@
       </v-col>
 
       <v-col md="3" sm="5" cols="12">
-        <div
-          style="background-color: #eeeeee; border-radius: 20px;border: 1.5px solid black;"
-          class="pa-8 text-center"
-        >
+        <div style="background-color: #eeeeee; border-radius: 20px;border: 1.5px solid black; min-height: 250px;"
+          class="pa-8 text-center">
           <v-img alt="image" style="width: 100%;margin: auto;" src="/assets/img/extra/logo-text.svg"></v-img>
-          <v-chip class="mt-n12" variant="outlined" color="black" style="background-color: white;">{{ mainData.communityLocation.city }}</v-chip>
+          <v-chip class="mt-n12" variant="outlined" color="black" style="background-color: white;">{{
+            mainData.communityLocation.city }}</v-chip>
           <v-img alt="image" style="width: 90%;margin: auto;" src="/assets/img/gdg-logo.svg"></v-img>
         </div>
       </v-col>

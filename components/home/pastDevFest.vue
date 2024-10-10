@@ -12,8 +12,13 @@
           alt="image"
           cover
           class="mt-6"
-          :src="`/img/past-devfest/${mainData.eventInfo.pastDevFest.images[0]}`"
-        ></v-img>
+          :src="`/img/past-devfest/${mainData.eventInfo.pastDevFest.images[0].default}`"
+        >
+          <template #sources>
+            <source :srcset="`/img/past-devfest/${mainData.eventInfo.pastDevFest.images[0].medium}`" media="(max-width: 1200px)">
+            <source :srcset="`/img/past-devfest/${mainData.eventInfo.pastDevFest.images[0].default}`">
+          </template>
+      </v-img>
       </v-col>
       <v-col md="12" sm="12" cols="12">
         <v-container fluid class="px-0">
@@ -57,7 +62,12 @@
           alt="image"
           :src="`/img/past-devfest/${mainData.eventInfo.pastDevFest.images[1]}`"
           style="border: 1.5px solid black"
-        ></v-img>
+        >
+        <template #sources>
+          <source :srcset="`/img/past-devfest/${mainData.eventInfo.pastDevFest.images[1].medium}`" media="(max-width: 1200px)">
+          <source :srcset="`/img/past-devfest/${mainData.eventInfo.pastDevFest.images[1].default}`">
+        </template>
+      </v-img>
       </v-col>
       <v-col md="6" sm="6">
         <v-img
@@ -67,7 +77,12 @@
           alt="image"
           :src="`/img/past-devfest/${mainData.eventInfo.pastDevFest.images[2]}`"
           style="border: 1.5px solid black"
-        ></v-img>
+        >
+          <template #sources>
+            <source :srcset="`/img/past-devfest/${mainData.eventInfo.pastDevFest.images[2].medium}`" media="(max-width: 1200px)">
+            <source :srcset="`/img/past-devfest/${mainData.eventInfo.pastDevFest.images[2].default}`">
+          </template>
+      </v-img>
       </v-col>
     </v-row>
   </v-container>

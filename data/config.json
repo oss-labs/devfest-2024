@@ -70,7 +70,21 @@
     ],
     "pastDevFest": {
       "summery": "Revive los mejores momentos de la edición pasada, con charlas inspiradoras. Un vistazo a cómo DevFest ha impulsado la innovación y el aprendizaje en la comunidad.",
-      "images": ["devfest.png", "image-2.jpeg", "image-3.jpeg"],
+      "images": [
+        {
+          "default": "devfest.png",
+          "small": "devfest-small.jpeg",
+          "medium": "devfest-medium.png"
+        },
+        {
+          "default": "image-2.jpeg",
+          "medium": "image-2-min.png"
+        }, 
+        {
+          "default": "image-3.jpeg",
+          "medium": "image-3-min.png"
+        }
+    ],
       "stats": [
         {
           "name": "Ponentes",

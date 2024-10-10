@@ -15,6 +15,7 @@
           :src="`/img/past-devfest/${mainData.eventInfo.pastDevFest.images[0].default}`"
         >
           <template #sources>
+            <source :srcset="`/img/past-devfest/${mainData.eventInfo.pastDevFest.images[0].small}`" media="(max-width: 600px)">
             <source :srcset="`/img/past-devfest/${mainData.eventInfo.pastDevFest.images[0].medium}`" media="(max-width: 1200px)">
             <source :srcset="`/img/past-devfest/${mainData.eventInfo.pastDevFest.images[0].default}`">
           </template>
